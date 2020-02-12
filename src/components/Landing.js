@@ -1,18 +1,23 @@
 import React, { Component } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class Landing extends Component {
   render() {
     return (
-      <div>
-        <div className="topLeft">
-          <h1 className="">QueerMeUp</h1>
-        </div>
+      <div className="landingContent">
         <div className="">
+          <h1 class="title">
+            <span class="a">Qu</span>
+            <span class="b">ee</span>
+            <span class="c">r</span>
+            <span class="d">M</span>
+            <span class="e">e</span>
+            <span class="f">U</span>
+            <span class="a">P</span>
+          </h1>
+        </div>
+        <div>
           <p>
             Find the perfect queer activities, bars, shows and events in your
             favourite city

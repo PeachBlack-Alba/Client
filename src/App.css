@@ -7,6 +7,7 @@ body {
   background-attachment: fixed; */
   height: 100%;
   width: 100%;
+  margin: 20px;
 }
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
 
@@ -15,9 +16,40 @@ body {
   font-size: large;
   font-weight: bold;
   color: black;
+  text-align: center;
+  height: 100%;
+  width: 80%;
+  justify-content: center;
+}
+
+.a {
+  color: #e7484f;
+}
+.b {
+  color: #f68b1d;
+}
+.c {
+  color: #fced00;
+}
+.d {
+  color: #009e4f;
+}
+.e {
+  color: #00aac3;
+}
+.f {
+  color: #732982;
 }
 
 /* Landing page  */
+
+.landingContent {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  left: 10%;
+  top: 10%;
+}
 
 /*buttons*/
 .container {
@@ -43,7 +75,7 @@ body {
   margin: 10px;
 }
 
-.rainbow-5:hover {
+.rainbow-5 {
   background-image: linear-gradient(
     to right,
     #e7484f,
@@ -68,3 +100,5 @@ body {
     background-position: 20vw;
   }
 }
+
+/*Description*/
