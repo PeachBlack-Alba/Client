@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Landing from "./components/Landing";
 import Cities from "./components/Cities";
+import SignUp from "./components/SignUp";
+import LogIn from "./components/LogIn";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route exact path="/" component={Cities} />
+          <Route exact path="/cities" component={Cities} />
+          <Route exact path="/signUp" component={SignUp} />
+          <Route exact path="/logIn" component={LogIn} />
         </Switch>
       </div>
     </BrowserRouter>

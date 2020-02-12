@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class Landing extends Component {
@@ -22,10 +22,14 @@ export default class Landing extends Component {
             Find the perfect queer activities, bars, shows and events in your
             favourite city
           </p>
-
+          <Link to="/cities">Cities</Link>
           <div className="container text-center">
-            <a className="rainbow rainbow-5">Sign Up!</a>
-            <a className="rainbow rainbow-5">Log In!</a>
+            <Link to="/signUp" className="rainbow rainbow-5">
+              Sign Up!
+            </Link>
+            <Link to="/logIn" className="rainbow rainbow-5">
+              Log In!
+            </Link>
           </div>
         </div>
       </div>
