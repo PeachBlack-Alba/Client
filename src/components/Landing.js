@@ -7,14 +7,14 @@ export default class Landing extends Component {
     return (
       <div className="landingContent">
         <div className="">
-          <h1 class="title">
-            <span class="a">Qu</span>
-            <span class="b">ee</span>
-            <span class="c">r</span>
-            <span class="d">M</span>
-            <span class="e">e</span>
-            <span class="f">U</span>
-            <span class="a">P</span>
+          <h1 className="title">
+            <span className="a">Qu</span>
+            <span className="b">ee</span>
+            <span className="c">r</span>
+            <span className="d">M</span>
+            <span className="e">e</span>
+            <span className="f">U</span>
+            <span className="a">P</span>
           </h1>
         </div>
         <div>
@@ -24,8 +24,8 @@ export default class Landing extends Component {
           </p>
 
           <div className="container text-center">
-            <a class="rainbow rainbow-5">Sign Up!</a>
-            <a class="rainbow rainbow-5">Log In!</a>
+            <a className="rainbow rainbow-5">Sign Up!</a>
+            <a className="rainbow rainbow-5">Log In!</a>
           </div>
         </div>
       </div>

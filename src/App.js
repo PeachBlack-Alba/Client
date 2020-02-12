@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Landing from "./components/Landing";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Landing from "./components/Landing";
 import Cities from "./components/Cities";
 
 function App() {
