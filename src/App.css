@@ -64,7 +64,7 @@ body {
 }
 .rainbow {
   background-color: #f66;
-  border-radius: 4px;
+  border-radius: 10px;
   color: #fff;
   cursor: pointer;
   padding: 20px 20px;
@@ -75,7 +75,7 @@ body {
   margin: 10px;
 }
 
-.rainbow-5 {
+.rainbow-1 {
   background-image: linear-gradient(
     to right,
     #e7484f,
@@ -99,6 +99,15 @@ body {
   to {
     background-position: 20vw;
   }
+}
+
+.start {
+  background-color: #93f;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 0;
 }
 
 /*Description*/

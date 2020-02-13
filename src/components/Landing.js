@@ -22,12 +22,14 @@ export default class Landing extends Component {
             Find the perfect queer activities, bars, shows and events in your
             favourite city
           </p>
-          <Link to="/cities">Cities</Link>
+          <Link to="/cities" className="start">
+            Let's Start!
+          </Link>
           <div className="container text-center">
-            <Link to="/signUp" className="rainbow rainbow-5">
+            <Link to="/signUp" className="rainbow rainbow-1">
               Sign Up!
             </Link>
-            <Link to="/logIn" className="rainbow rainbow-5">
+            <Link to="/logIn" className="rainbow rainbow-1">
               Log In!
             </Link>
           </div>
