@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
+import Cities from "./Cities";
 
 export default class CitiesPage extends Component {
   state = {
@@ -33,28 +34,6 @@ export default class CitiesPage extends Component {
     console.log(filteredCities);
     return (
       <div>
-        {this.state.input === "" // if the input is empty show all the cities
-          ? cities.map(city => {
-              // we are just maping one elemet (city), if we mapped more than one should be {this.state.cities.map((cities )=>
-              // map to get the information we need of all cities, but one by one. That's why we put "city" in the parentesis
-              return (
-                <div key={city._id}>
-                  <h1>{city.name}</h1>
-                  <p>{city.country}</p>
-                </div>
-              );
-            })
-          : filteredCities.map(city => {
-              // the : means else if
-              // we are just maping one elemet (city), if we mapped more than one should be {this.state.cities.map((cities )=>
-              // map to get the information we need of all cities, but one by one. That's why we put "city" in the parentesis
-              return (
-                <div key={city._id}>
-                  <h1>{city.name}</h1>
-                  <p>{city.country}</p>
-                </div>
-              );
-            })}
         <Form>
           <Form.Control
             type="text"
@@ -66,6 +45,15 @@ export default class CitiesPage extends Component {
             }}
           />
         </Form>
+        <Row>
+          {this.state.input === "" ? ( // if the input is empty show all the cities
+            // we are just maping one elemet (city), if we mapped more than one should be {this.state.cities.map((cities )=>
+            // map to get the information we need of all cities, but one by one. That's why we put "city" in the parentesis
+            <Cities citiesData={cities} />
+          ) : (
+            <Cities citiesData={filteredCities} />
+          )}
+        </Row>
       </div>
     );
   }
