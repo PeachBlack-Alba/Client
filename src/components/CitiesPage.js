@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Form, Row } from "react-bootstrap";
 import Cities from "./Cities";
-
-export default class CitiesPage extends Component {
+import { connect } from "react-redux";
+import { fetchCities } from "../Store/Actions/CityActions";
+class CitiesPage extends Component {
   state = {
     cities: [], // creamos un empty array, cada vez que el state varia, se render la funcióndentro de render con la información modificada
     fileterdCities: [],
@@ -20,7 +21,9 @@ export default class CitiesPage extends Component {
   }
 
   componentDidMount() {
-    this.fetchCities(); // Cuando la web está "montada", es cuando generamos la función fetchcities, con la información de cities (lista), por lo tanto el state varia y se render la función render de nuevo pero con la información modificada
+    //this.fetchCities(); // Cuando la web está "montada", es cuando generamos la función fetchcities, con la información de cities (lista), por lo tanto el state varia y se render la función render de nuevo pero con la información modificada
+    this.props.fetchCities();
+    console.log(this.props);
   }
 
   render() {
@@ -58,3 +61,13 @@ export default class CitiesPage extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    cities: state.cities
+  };
+};
+const mapDispatchToProps = dispatch => ({
+  fetchCities: () => dispatch(fetchCities())
+});
+export default connect(mapStateToProps, mapDispatchToProps)(CitiesPage);

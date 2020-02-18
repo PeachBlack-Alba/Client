@@ -1,4 +1,6 @@
 import { combineReducers } from "redux";
-import citiesReducer from "./citiesReducer";
-const rootReducer = combineReducers({ cities: citiesReducer });
+import citiesReducer from "./CitiesReducer";
+const rootReducer = combineReducers({
+  cities: citiesReducer
+});
 export default rootReducer;

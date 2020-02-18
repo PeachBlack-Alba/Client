@@ -2,14 +2,15 @@ import {
   FETCH_CITIES_REQUESTED,
   FETCH_CITIES_SUCCESS,
   FETCH_CITIES_ERROR
-} from "../Actions/CityActions";
+} from "../ActionTypes";
 
 const initialState = {
   isLoading: false,
   isError: false,
-  data: { cities }
+  cities: []
 };
 export default (state = initialState, action) => {
+  console.log(action.payload);
   switch (action.type) {
     case FETCH_CITIES_REQUESTED:
       return {
@@ -35,6 +36,9 @@ export default (state = initialState, action) => {
   }
 };
 
-export const getCities = state => state.data;
+// Selectors
+//Selectors are used to get defined parts of the state
+//To change something within the state, change the selector
+export const getCities = state => state.cities;
 export const getCitiesLoading = state => state.isLoading;
 export const getCitiesError = state => state.isError;
