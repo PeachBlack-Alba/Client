@@ -36,7 +36,7 @@ class CitiesPage extends Component {
     });
     console.log(filteredCities);
     return (
-      <div>
+      <div className="citiesDisplay">
         <Form>
           <Form.Control
             type="text"

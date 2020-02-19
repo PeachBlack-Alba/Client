@@ -19,10 +19,23 @@ export default class CitiesPage extends Component {
           // map to get the information we need of all cities, but one by one. That's why we put "city" in the parentesis
           return (
             <div key={city._id}>
-              <h1>{city.name}</h1>
-              <p>{city.country}</p>
-              <img src={city.img} />
+              <h1 className="cityName">{city.name}</h1>
+              <p className="cityCountry">{city.country}</p>
               <Link to={"/itineraries/" + city.name}>See itineraries</Link>
+              <img
+                src={city.img}
+                alt="pic"
+                style={{
+                  width: 300,
+                  height: 150,
+                  objectFit: "cover",
+                  overflow: "hidden",
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  paddingBottom: 10
+                }}
+              />
             </div>
           );
         })}
