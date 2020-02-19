@@ -1,3 +1,8 @@
+import {
+  FETCH_CITIES_REQUESTED,
+  FETCH_CITIES_SUCCESS,
+  FETCH_CITIES_ERROR
+} from "../ActionTypes";
 export const fetchCities = () => dispatch => {
   console.log("in fetch cities action");
   dispatch(fetchCitiesRequested());
@@ -16,20 +21,20 @@ export const fetchCities = () => dispatch => {
 
 const fetchCitiesRequested = () => {
   return {
-    type: "FETCH_CITIES_REQUESTED"
+    type: FETCH_CITIES_REQUESTED
   };
 };
 
 const fetchCitiesSuccess = data => {
   return {
-    type: "FETCH_CITIES_SUCCESS",
+    type: FETCH_CITIES_SUCCESS,
     payload: data
   };
 };
 
 const fetchCitiesError = error => {
   return {
-    type: "FETCH_CITIES_ERROR",
+    type: FETCH_CITIES_ERROR,
     payload: error
   };
 };

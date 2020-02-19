@@ -18,6 +18,7 @@ export default (state = initialState, action) => {
         isLoading: true
       };
     case FETCH_CITIES_SUCCESS:
+      console.log("cities are fetched");
       return {
         ...state,
         isLoading: false,

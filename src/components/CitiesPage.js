@@ -23,13 +23,13 @@ class CitiesPage extends Component {
   componentDidMount() {
     //this.fetchCities(); // Cuando la web está "montada", es cuando generamos la función fetchcities, con la información de cities (lista), por lo tanto el state varia y se render la función render de nuevo pero con la información modificada
     this.props.fetchCities();
-    console.log(this.props);
+    //console.log(this.props);
   }
 
   render() {
-    const { cities } = this.state;
+    const { cities } = this.props.cities;
     let cityFilter = this.state.input;
-
+    console.log(this.props.cities);
     let filteredCities = cities.filter(city => {
       let cityName = city.name.toLowerCase();
       return cityName.indexOf(cityFilter.toLowerCase()) !== -1;
