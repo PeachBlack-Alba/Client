@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default class CitiesPage extends Component {
   state = {
@@ -20,7 +21,8 @@ export default class CitiesPage extends Component {
             <div key={city._id}>
               <h1>{city.name}</h1>
               <p>{city.country}</p>
-              <img></img>
+              <img src={city.img} />
+              <Link to={"/itineraries/" + city.name}>See itineraries</Link>
             </div>
           );
         })}
