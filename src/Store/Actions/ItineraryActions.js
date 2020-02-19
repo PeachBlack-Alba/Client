@@ -13,7 +13,7 @@ export const fetchItineraries = () => dispatch => {
       dispatch(fetchItinerariesSuccess(data));
     })
     .catch(error => {
-      dispatch(fetchItinerarieError(error));
+      dispatch(fetchItinerariesError(error));
     });
 };
 
