@@ -3,13 +3,14 @@ import {
   FETCH_ITINERARIES_SUCCESS,
   FETCH_ITINERARIES_ERROR
 } from "../ActionTypes";
-export const fetchItineraries = () => dispatch => {
+export const fetchItineraries = city_id => dispatch => {
   console.log("in fetch itineraries action");
   dispatch(fetchItinerariesRequested());
 
-  fetch("http://localhost:5000/cities/city_id/itineraries")
+  fetch(`http://localhost:5000/itineraries/${city_id}`)
     .then(response => response.json())
     .then(data => {
+      console.log(data);
       dispatch(fetchItinerariesSuccess(data));
     })
     .catch(error => {

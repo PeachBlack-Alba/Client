@@ -21,7 +21,9 @@ export default class CitiesPage extends Component {
             <div key={city._id}>
               <h1 className="cityName">{city.name}</h1>
               <p className="cityCountry">{city.country}</p>
-              <Link to={"/itineraries/" + city.name}>See itineraries</Link>
+              <Link className="seeItineraries" to={"/itineraries/" + city.name}>
+                See itineraries
+              </Link>
               <img
                 src={city.img}
                 alt="pic"
@@ -31,9 +33,11 @@ export default class CitiesPage extends Component {
                   objectFit: "cover",
                   overflow: "hidden",
                   display: "block",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  paddingBottom: 10
+                  // marginLeft: "auto",
+                  // marginRight: "auto",
+                  paddingBottom: 10,
+                  borderRadius: 50,
+                  margin: 20
                 }}
               />
             </div>

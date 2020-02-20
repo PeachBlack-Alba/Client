@@ -1,20 +1,21 @@
 html,
 body {
-  /* background-image: url();
+  background-image: url(https://i.pinimg.com/564x/ec/ab/ba/ecabba37563299a5dba87d6058df3aac.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed; */
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
-  margin: 20px;
+  /* margin: 20px 20px 20px 20px; */
 }
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap");
 
 body {
-  font-family: "Nunito", sans-serif;
-  font-size: large;
-  font-weight: bold;
+  font-family: "Press Start 2P", cursive;
+  font-family: "Orbitron", sans-serif;
+  font-size: small;
+  /* font-weight: bold; */
   color: black;
   text-align: center;
   height: 100%;
@@ -50,6 +51,17 @@ body {
   left: 10%;
   top: 10%;
 }
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+p {
+  text-align: center;
+  color: white;
+  font-size: medium;
+}
 
 /*buttons*/
 .container {
@@ -57,6 +69,7 @@ body {
   align-content: space-between;
   height: 60px;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .text-center {
@@ -102,18 +115,39 @@ body {
 }
 
 .start {
-  background-color: #93f;
+  background-color: #ff48c4;
   border-radius: 10px;
   color: white;
   cursor: pointer;
   padding: 10px 10px;
-  margin: 0;
+  margin: 20px;
 }
 
 /*Description*/
 
-/*Cities title, country*/
+/*Cities title, country, searchBar*/
 
+.searchBar {
+  display: flex;
+}
 .cityName {
   text-align: center;
+  color: white;
+  font-size: medium;
+}
+.cityCountry {
+  text-align: center;
+  color: white;
+  font-size: small;
+}
+.seeItineraries {
+  background-color: #ff48c4;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 10px;
+}
+.citiesDisplay {
+  margin: 40px 40px 40px 40px;
 }

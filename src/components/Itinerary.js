@@ -8,20 +8,9 @@ class Itinerary extends Component {
     itineraries: []
   };
 
-  fetchItineraries() {
-    // fetching data
-    fetch("http://localhost:5000/cities/city_id/itineraries")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ itineraries: data }); // set state con la información de cities
-      })
-
-      .catch(console.log);
-  }
-
   componentDidMount() {
     //this.fetchCities(); // Cuando la web está "montada", es cuando generamos la función fetchcities, con la información de cities (lista), por lo tanto el state varia y se render la función render de nuevo pero con la información modificada
-    fetchItineraries();
+    this.props.fetchItineraries(this.props.match.params.city);
     //console.log(this.props);
   }
 
@@ -31,7 +20,7 @@ class Itinerary extends Component {
       <div>
         <h1>Welcome to {this.props.match.params.city}</h1>
 
-        <Row>{this.props.itineraries}</Row>
+        {/* <Row>{this.props.itineraries}</Row> */}
       </div>
     );
   }
@@ -43,6 +32,6 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => ({
-  fetchItineraries: () => dispatch(fetchItineraries())
+  fetchItineraries: city => dispatch(fetchItineraries(city))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Itinerary);
