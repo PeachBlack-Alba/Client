@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fetchItineraries } from "../Store/Actions/ItineraryActions";
+import { Link } from "react-router-dom";
 
 class Itinerary extends Component {
   state = {
@@ -16,11 +17,35 @@ class Itinerary extends Component {
 
   render() {
     console.log(this.props);
+    const { itineraries } = this.props.itineraries;
+    //let itinerariesData = this.props.itineraries.itineraries
     return (
-      <div>
+      <div className="itinerariesContent">
         <h1>Welcome to {this.props.match.params.city}</h1>
-
-        {/* <Row>{this.props.itineraries}</Row> */}
+        {itineraries.map(itineraries => {
+          return (
+            <div key={itineraries}>
+              <Link className="seeItineraries">{itineraries.title}</Link>
+              <img
+                src={itineraries.img}
+                alt="pic"
+                style={{
+                  width: 350,
+                  height: 200,
+                  objectFit: "cover",
+                  overflow: "hidden",
+                  display: "block",
+                  borderRadius: 50,
+                  margin: 10
+                }}
+              />
+              <p className="itinerariesInformation">{itineraries.duration}</p>
+              <p className="itinerariesInformation">{itineraries.price}</p>
+              {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
+              <p className="itinerariesInformation">{itineraries.dates}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }

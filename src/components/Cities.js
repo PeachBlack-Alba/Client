@@ -28,8 +28,8 @@ export default class CitiesPage extends Component {
                 src={city.img}
                 alt="pic"
                 style={{
-                  width: 300,
-                  height: 150,
+                  width: 350,
+                  height: 200,
                   objectFit: "cover",
                   overflow: "hidden",
                   display: "block",

@@ -129,11 +129,12 @@ p {
 
 .searchBar {
   display: flex;
+  margin-left: 15px;
 }
 .cityName {
   text-align: center;
   color: white;
-  font-size: medium;
+  font-size: 30px;
 }
 .cityCountry {
   text-align: center;
@@ -147,7 +148,29 @@ p {
   cursor: pointer;
   padding: 10px 10px;
   margin: 10px;
+  font-size: 18px;
 }
 .citiesDisplay {
-  margin: 40px 40px 40px 40px;
+  /* margin: 40px 40px 40px 40px; */
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  left: 5%;
+  top: 5%;
+}
+
+/*Itineraries Page*/
+.itinerariesInformation {
+  text-align: center;
+  color: white;
+  font-size: small;
+  margin: 10;
+}
+
+.itinerariesContent {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  left: 5%;
+  top: 5%;
 }
