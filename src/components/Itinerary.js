@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Activities from "../components/Activities";
 
 class Itinerary extends Component {
   state = {
@@ -40,7 +41,7 @@ class Itinerary extends Component {
                   </Accordion.Toggle>
 
                   <Accordion.Collapse eventKey={itinerary.id}>
-                    <Card.Body>Hello! I'm the body</Card.Body>
+                    <Card.Body>something</Card.Body>
                   </Accordion.Collapse>
                 </Card>
               </Accordion>

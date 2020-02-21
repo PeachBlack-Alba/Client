@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
 
 export default class Activities extends Component {
   state = {
@@ -8,6 +6,7 @@ export default class Activities extends Component {
   };
 
   render() {
-    return <div></div>;
+    console.log(this.props);
+    return <div>Activities</div>;
   }
 }
