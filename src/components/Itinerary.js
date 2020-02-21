@@ -36,11 +36,18 @@ class Itinerary extends Component {
                   overflow: "hidden",
                   display: "block",
                   borderRadius: 50,
-                  margin: 10
+                  marginTop: 20,
+                  marginBottom: 10,
+                  marginLeft: 10,
+                  marginRight: 10
                 }}
               />
-              <p className="itinerariesInformation">{itineraries.duration}</p>
-              <p className="itinerariesInformation">{itineraries.price}</p>
+              <p className="itinerariesInformation">
+                Duration (hours):{itineraries.duration}
+              </p>
+              <p className="itinerariesInformation">
+                Price (€):{itineraries.price}
+              </p>
               {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
               <p className="itinerariesInformation">{itineraries.dates}</p>
             </div>

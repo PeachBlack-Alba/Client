@@ -60,7 +60,6 @@ h1 {
 p {
   text-align: center;
   color: white;
-  font-size: medium;
 }
 
 /*buttons*/
@@ -163,7 +162,7 @@ p {
 .itinerariesInformation {
   text-align: center;
   color: white;
-  font-size: small;
+  font-size: 18px;
   margin: 10;
 }
 
