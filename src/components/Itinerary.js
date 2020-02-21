@@ -3,6 +3,9 @@ import { Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fetchItineraries } from "../Store/Actions/ItineraryActions";
 import { Link } from "react-router-dom";
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 class Itinerary extends Component {
   state = {
@@ -22,12 +25,27 @@ class Itinerary extends Component {
     return (
       <div className="itinerariesContent">
         <h1>Welcome to {this.props.match.params.city}</h1>
-        {itineraries.map(itineraries => {
+        {itineraries.map((itinerary, index) => {
           return (
-            <div key={itineraries}>
-              <Link className="seeItineraries">{itineraries.title}</Link>
+            <div key={index}>
+              <Accordion defaultActiveKey="0">
+                <Card>
+                  <Accordion.Toggle
+                    as={Button}
+                    variant="link"
+                    eventKey={itinerary.id}
+                    className="seeItineraries"
+                  >
+                    {itinerary.title}
+                  </Accordion.Toggle>
+
+                  <Accordion.Collapse eventKey={itinerary.id}>
+                    <Card.Body>Hello! I'm the body</Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
               <img
-                src={itineraries.img}
+                src={itinerary.img}
                 alt="pic"
                 style={{
                   width: 350,
@@ -43,13 +61,16 @@ class Itinerary extends Component {
                 }}
               />
               <p className="itinerariesInformation">
-                Duration (hours):{itineraries.duration}
+                Duration (hours):{itinerary.duration}
               </p>
               <p className="itinerariesInformation">
-                Price (€):{itineraries.price}
+                Price (€):{itinerary.price}
               </p>
               {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
-              <p className="itinerariesInformation">{itineraries.dates}</p>
+              <p className="itinerariesInformation">{itinerary.dates}</p>
+              {/* <Accordion.Collapse eventKey={itinerary.id}>
+                <Card.Body>Hello! I'm the body</Card.Body>
+              </Accordion.Collapse> */}
             </div>
           );
         })}
