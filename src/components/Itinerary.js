@@ -41,7 +41,15 @@ class Itinerary extends Component {
                   </Accordion.Toggle>
 
                   <Accordion.Collapse eventKey={itinerary.id}>
-                    <Card.Body>something</Card.Body>
+                    <Card.Body>
+                      {itinerary.activities ? (
+                        <Activities
+                          activities={itinerary.activities}
+                        ></Activities>
+                      ) : (
+                        <p>sorry no activities</p>
+                      )}
+                    </Card.Body>
                   </Accordion.Collapse>
                 </Card>
               </Accordion>
@@ -69,9 +77,6 @@ class Itinerary extends Component {
               </p>
               {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
               <p className="itinerariesInformation">{itinerary.dates}</p>
-              {/* <Accordion.Collapse eventKey={itinerary.id}>
-                <Card.Body>Hello! I'm the body</Card.Body>
-              </Accordion.Collapse> */}
             </div>
           );
         })}
