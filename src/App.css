@@ -158,6 +158,10 @@ p {
   top: 5%;
 }
 
+.accordion {
+  background-color: transparent;
+}
+
 /*Itineraries Page*/
 .itinerariesInformation {
   text-align: center;
@@ -172,4 +176,8 @@ p {
   right: 5%;
   left: 5%;
   top: 5%;
+}
+
+.pactivities {
+  color: black;
 }

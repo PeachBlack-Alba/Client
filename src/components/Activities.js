@@ -27,8 +27,8 @@ export default class Activities extends Component {
               }}
             />
 
-            <p>{activity.name}</p>
-            <p>More info: {activity.moreinfo}</p>
+            <p className="pactivities">{activity.name}</p>
+            <p className="pactivities">More info: {activity.moreinfo}</p>
           </div>
         ))}
       </div>

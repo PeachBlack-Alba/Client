@@ -41,7 +41,7 @@ class Itinerary extends Component {
                   </Accordion.Toggle>
 
                   <Accordion.Collapse eventKey={itinerary.id}>
-                    <Card.Body>
+                    <Card.Body classname="accordion">
                       {itinerary.activities ? (
                         <Activities
                           activities={itinerary.activities}
