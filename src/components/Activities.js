@@ -7,7 +7,6 @@ export default class Activities extends Component {
 
     return (
       <div>
-        <h1>Activities</h1>
         {activities.map((activity, index) => (
           <div key={index}>
             <img

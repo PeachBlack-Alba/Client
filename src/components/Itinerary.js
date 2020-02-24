@@ -41,13 +41,14 @@ class Itinerary extends Component {
                   </Accordion.Toggle>
 
                   <Accordion.Collapse eventKey={itinerary.id}>
-                    <Card.Body classname="accordion">
+                    <Card.Body>
                       {itinerary.activities ? (
                         <Activities
+                          classname="accordion"
                           activities={itinerary.activities}
                         ></Activities>
                       ) : (
-                        <p>sorry no activities</p>
+                        <p className="noactivities">sorry no activities</p>
                       )}
                     </Card.Body>
                   </Accordion.Collapse>
