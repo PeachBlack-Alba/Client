@@ -50,6 +50,7 @@ body {
   right: 10%;
   left: 10%;
   top: 10%;
+  margin-top: 100px;
 }
 h1 {
   text-align: center;
@@ -183,4 +184,29 @@ p {
 }
 .noactivities {
   color: black;
+}
+
+/**********************Sign Up*************************/
+
+.PageSwitcher {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10%;
+}
+
+.PageSwitcher__Item {
+  background-color: #4c5d72;
+  color: #9da6b1;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 0.9em;
+  border: none;
+  outline: none;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.PageSwitcher__Item--Active {
+  background-color: #5ed0c0;
+  color: white;
 }

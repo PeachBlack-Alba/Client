@@ -18,7 +18,6 @@ function App() {
           <Route exact path="/signUp" component={SignUp} />
           <Route exact path="/logIn" component={LogIn} />
           <Route exact path="/itineraries/:city" component={Itinerary} />
-          {/* <Route exact path="/activities" component={Activities} /> */}
         </Switch>
       </div>
     </BrowserRouter>
