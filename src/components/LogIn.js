@@ -6,13 +6,14 @@ export default class LogIn extends Component {
     return (
       <div>
         <div className="PageSwitcher">
-          <a
+          <Link
+            exact
             to="/Login"
-            activeClassName="PageSwitcher__Item--Active"
+            ClassName="PageSwitcher__Item--Active"
             className="PageSwitcher__Item"
           >
             Log In
-          </a>
+          </Link>
           <Link
             to="/SignUp"
             activeClassName="PageSwitcher__Item--Active"
