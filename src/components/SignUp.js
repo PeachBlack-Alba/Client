@@ -53,6 +53,20 @@ export default class SignUp extends Component {
           <form onSubmit={this.handleSubmit} className="FormFields">
             <div className="FormField">
               <label className="FormField__Label" htmlFor="name">
+                User Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="FormField__Input"
+                placeholder="User name"
+                name="name"
+                value={this.state.username}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="name">
                 Full Name
               </label>
               <input
