@@ -79,10 +79,9 @@ export default class SignUp extends Component {
               />
             </div>
             <div className="FormField">
-              <button className="FormField__Button mr-20">Sign Up</button>{" "}
-              <a to="/sign-in" className="FormField__Link">
-                I'm already member
-              </a>
+              <button className="FormField__Button mr-20">
+                Create Account
+              </button>
             </div>
           </form>
         </div>
