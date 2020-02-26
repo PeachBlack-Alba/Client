@@ -2,16 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class SignUp extends Component {
-  state = {
-    picture: "",
-    username: "",
-    message: "",
-    email: "",
-    password: ""
-    // isError: false,
-    // error: false,
-    // isRegistered: false
-  };
+  constructor() {
+    super();
+    this.state = {
+      picture: "",
+      username: "",
+      email: "",
+      password: ""
+      // isError: false,
+      // error: false,
+      // isRegistered: false
+    };
+  }
   render() {
     return (
       <div>

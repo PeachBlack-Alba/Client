@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class LogIn extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
   render() {
     return (
       <div>
