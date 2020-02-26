@@ -8,7 +8,30 @@ export default class LogIn extends Component {
       email: "",
       password: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  handleChange(e) {
+    let target = e.target; // this is the target element
+    let value = target.value;
+    let name = target.name; // name attribute of the input, so we know what changes if the email or the password
+    // whenever the input change we restate the state :
+    console.log(value);
+    console.log(name);
+    this.setState({
+      [name]: value
+    });
+    console.log(this.state);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    console.log("The data is:");
+    console.log(this.state);
+  }
+
   render() {
     return (
       <div>
@@ -41,6 +64,8 @@ export default class LogIn extends Component {
             className="FormField__Input"
             placeholder="Enter your email adress"
             name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
           />
         </div>
         <div className="FormField">
@@ -53,10 +78,17 @@ export default class LogIn extends Component {
             className="FormField__Input"
             placeholder="Enter your password"
             name="password"
+            value={this.state.password}
+            onChange={this.handleChange}
           />
         </div>
         <div className="FormField">
-          <button className="FormField__Button mr-20">Log In</button>{" "}
+          <button
+            className="FormField__Button mr-20"
+            onClick={this.handleSubmit}
+          >
+            Log In
+          </button>{" "}
         </div>
       </div>
     );
