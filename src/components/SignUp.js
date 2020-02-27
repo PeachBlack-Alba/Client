@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import SignUpActions from "../Store/Actions/SignUpActions";
 
 export default class SignUp extends Component {
   constructor() {
     super();
     this.state = {
-      picture: "",
-      username: "",
-      email: "",
-      password: ""
+      user: {
+        picture: "",
+        username: "",
+        email: "",
+        password: "",
+        passwordRepeat: ""
+      }
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,6 +32,10 @@ export default class SignUp extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const user = {
+      ...this.state
+    };
+    this.props.SignUpActions(user);
 
     console.log("The data is:");
     console.log(this.state);
@@ -50,7 +58,7 @@ export default class SignUp extends Component {
         <h1>Sign Up</h1>
 
         <div className="FormCenter">
-          <form onSubmit={this.handleSubmit} className="FormFields">
+          <form className="FormFields">
             <div className="FormField">
               <label className="FormField__Label" htmlFor="name">
                 User Name
@@ -94,6 +102,21 @@ export default class SignUp extends Component {
               />
             </div>
             <div className="FormField">
+              <label className="FormField__Label" htmlFor="password">
+                Repeat Password
+              </label>
+              <input
+                type="passwordRepeat"
+                id="passwordRepeat"
+                className="FormField__Input"
+                placeholder="Enter your password again"
+                name="passwordRepeat"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="FormField">
               <label className="FormField__Label" htmlFor="picture">
                 Picture
               </label>
@@ -108,7 +131,10 @@ export default class SignUp extends Component {
               />
             </div>
             <div className="FormField">
-              <button className="FormField__Button mr-20">
+              <button
+                className="FormField__Button mr-20"
+                onSubmit={this.handleSubmit}
+              >
                 Create Account
               </button>
             </div>

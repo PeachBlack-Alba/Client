@@ -3,6 +3,7 @@ import citiesReducer from "./CitiesReducer";
 import itinerariesReducer from "./ItineraryReducer";
 const rootReducer = combineReducers({
   cities: citiesReducer,
-  itineraries: itinerariesReducer
+  itineraries: itinerariesReducer,
+  signUp: signUpReducer
 });
 export default rootReducer;
