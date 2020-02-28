@@ -46,14 +46,21 @@ class SignUp extends Component {
     ) {
       if (user.passwordRepeat === user.password) {
         this.props.signUpUser(user);
+
+        return (
+          <div>
+            <p>Thank you for registering!</p>
+            <Link to="/login">
+              <p>Log in</p>
+            </Link>
+          </div>
+        );
       } else {
         alert("Your password are not matching");
       }
     } else {
       alert("You missed a field");
     }
-
-    // console.log("The data is:");
   }
   render() {
     return (
