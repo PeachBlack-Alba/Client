@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import SignUpActions from "../Store/Actions/SignUpActions";
 import { connect } from "react-redux";
+import signUpUser from "../Store/Actions/SignUpActions";
 
-export default class SignUp extends Component {
+class SignUp extends Component {
   constructor() {
     super();
     this.state = {
-      user: {
-        picture: "",
-        username: "",
-        email: "",
-        password: "",
-        passwordRepeat: "",
-        isSignUp: false,
-        isError: false
-      }
+      picture: "",
+      username: "",
+      email: "",
+      password: "",
+      passwordRepeat: "",
+      isSignUp: false,
+      isError: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,13 +33,27 @@ export default class SignUp extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = {
-      ...this.state
-    };
-    this.props.SignUpActions(user);
+    console.log("handleSubmit");
+    const user = this.state;
 
-    console.log("The data is:");
-    console.log(this.state);
+    console.log(user);
+    if (
+      user.username !== "" ||
+      user.password !== "" ||
+      user.picture !== "" ||
+      user.passwordRepeat !== "" ||
+      user.email !== ""
+    ) {
+      if (user.passwordRepeat === user.password) {
+        this.props.signUpUser(user);
+      } else {
+        alert("Your password are not matching");
+      }
+    } else {
+      alert("You missed a field");
+    }
+
+    // console.log("The data is:");
   }
   render() {
     return (
@@ -114,7 +126,7 @@ export default class SignUp extends Component {
                 className="FormField__Input"
                 placeholder="Enter your password again"
                 name="passwordRepeat"
-                value={this.state.password}
+                value={this.state.passwordRepeat}
                 onChange={this.handleChange}
               />
             </div>
@@ -136,7 +148,7 @@ export default class SignUp extends Component {
             <div className="FormField">
               <button
                 className="FormField__Button mr-20"
-                onSubmit={this.handleSubmit}
+                onClick={this.handleSubmit}
               >
                 Create Account
               </button>
@@ -147,4 +159,7 @@ export default class SignUp extends Component {
     );
   }
 }
-// connect(mapStateToProps, { SignUpActions })(signUp);
+const mapDispatchToProps = dispatch => ({
+  signUpUser: user => dispatch(signUpUser(user))
+});
+export default connect(null, mapDispatchToProps)(SignUp);

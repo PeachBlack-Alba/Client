@@ -1,8 +1,10 @@
 import { FETCH_SIGNUP_SUCCESS, FETCH_SIGNUP_ERROR } from "../ActionTypes";
 import Axios from "axios";
 
-export default function SignUpActions(user) {
+export default function signUpUser(user) {
   return dispatch => {
+    console.log("signUpUser");
+    console.log(user);
     Axios.post("http://localhost:5000/signUp/signUp", {
       picture: user.picture,
       username: user.username,
@@ -17,8 +19,8 @@ export default function SignUpActions(user) {
         dispatch(signUpSuccess(res.data));
       })
       .catch(err => {
-        console.log(err.response.data);
-        dispatch(signUpFail(err.response.data));
+        console.log(err);
+        dispatch(signUpFail(err));
       });
   };
 }
