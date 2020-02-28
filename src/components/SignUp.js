@@ -11,7 +11,9 @@ export default class SignUp extends Component {
         username: "",
         email: "",
         password: "",
-        passwordRepeat: ""
+        passwordRepeat: "",
+        isSignUp: false,
+        isError: false
       }
     };
 
