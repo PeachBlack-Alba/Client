@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SignUpActions from "../Store/Actions/SignUpActions";
+import { connect } from "react-redux";
 
 export default class SignUp extends Component {
   constructor() {
@@ -146,3 +147,4 @@ export default class SignUp extends Component {
     );
   }
 }
+// connect(mapStateToProps, { SignUpActions })(signUp);

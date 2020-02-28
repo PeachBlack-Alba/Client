@@ -14,11 +14,11 @@ export default function SignUpActions(user) {
     })
       .then(res => {
         console.log(res);
-        dispatch(signUpSuccess(text));
+        dispatch(signUpSuccess(res.data));
       })
       .catch(err => {
-        console.log(result);
-        dispatch(signUpFail("error", error));
+        console.log(err.response.data);
+        dispatch(signUpFail(err.response.data));
       });
   };
 }
