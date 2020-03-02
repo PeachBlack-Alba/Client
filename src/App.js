@@ -25,3 +25,5 @@ function App() {
 }
 
 export default App;
+// put a method in app.js to check if there is a token so we are logged in
+// funcion App(props)
