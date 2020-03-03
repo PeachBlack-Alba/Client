@@ -46,8 +46,6 @@ class LogIn extends Component {
       });
     } else {
       this.setState({ error: false, error: "good to go" });
-      // this.setState({ isLoggedIn: true });
-      // this.logInRender();
       this.props.loginAction(this.state.email, this.state.password);
     }
   }
