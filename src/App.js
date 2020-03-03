@@ -27,3 +27,4 @@ function App() {
 export default App;
 // put a method in app.js to check if there is a token so we are logged in
 // funcion App(props)
+// To invalidate the token, just update the server-side value, and if iat is older than this, you can reject the token.
