@@ -44,6 +44,7 @@ export default class LogIn extends Component {
       });
     } else {
       this.setState({ error: false, error: "good to go" });
+      this.setState({ isLoggedIn: true });
       this.logInRender();
     }
   }
