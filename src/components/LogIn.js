@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { loginAction } from "../Store/Actions/LogInAction";
+import { connect } from "react-redux";
 
-export default class LogIn extends Component {
+class LogIn extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,7 +25,7 @@ export default class LogIn extends Component {
     console.log(value);
     console.log(name);
     this.setState({
-      [name]: value
+      [e.target.name]: e.target.value
     });
     console.log(this.state);
   }
@@ -44,8 +46,9 @@ export default class LogIn extends Component {
       });
     } else {
       this.setState({ error: false, error: "good to go" });
-      this.setState({ isLoggedIn: true });
-      this.logInRender();
+      // this.setState({ isLoggedIn: true });
+      // this.logInRender();
+      this.props.loginAction(this.state.email, this.state.password);
     }
   }
 
@@ -61,6 +64,7 @@ export default class LogIn extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <div className="PageSwitcher">
@@ -81,8 +85,8 @@ export default class LogIn extends Component {
           </Link>
         </div>
         <h1>Log In</h1>
-        {this.state.isLoggedIn ? (
-          this.logInRender
+        {this.props.logIn.isLoggedIn ? (
+          this.logInRender()
         ) : (
           <React.Fragment>
             <div className="FormField">
@@ -127,3 +131,13 @@ export default class LogIn extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    logIn: state.logIn
+  };
+};
+const mapDispatchToProps = dispatch => ({
+  loginAction: (email, password) => dispatch(loginAction(email, password))
+});
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
