@@ -6,7 +6,10 @@ export default class LogIn extends Component {
     super();
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      isLoggedIn: false,
+      token: "",
+      error: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,6 +33,30 @@ export default class LogIn extends Component {
 
     console.log("The data is:");
     console.log(this.state);
+    console.log("handleSubmit");
+    const user = this.state;
+    console.log(user);
+    if (!this.state.email || !this.state.password) {
+      console.log("missing fields");
+      this.setState({
+        error: true,
+        error: "All fields must be field"
+      });
+    } else {
+      this.setState({ error: false, error: "good to go" });
+      this.logInRender();
+    }
+  }
+
+  logInRender() {
+    return (
+      <div>
+        <h1>Welcome to QueerMeUp {this.state.username}</h1>
+        <Link to="/citiespage">
+          <p>something</p>
+        </Link>
+      </div>
+    );
   }
 
   render() {
@@ -53,43 +80,48 @@ export default class LogIn extends Component {
           </Link>
         </div>
         <h1>Log In</h1>
-
-        <div className="FormField">
-          <label className="FormField__Label" htmlFor="email">
-            Email adress
-          </label>
-          <input
-            type="email"
-            id="name"
-            className="FormField__Input"
-            placeholder="Enter your email adress"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="FormField">
-          <label className="FormField__Label" htmlFor="password">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="FormField__Input"
-            placeholder="Enter your password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="FormField">
-          <button
-            className="FormField__Button mr-20"
-            onClick={this.handleSubmit}
-          >
-            Log In
-          </button>{" "}
-        </div>
+        {this.state.isLoggedIn ? (
+          this.logInRender
+        ) : (
+          <React.Fragment>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="email">
+                Email adress
+              </label>
+              <input
+                type="email"
+                id="name"
+                className="FormField__Input"
+                placeholder="Enter your email adress"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="password">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="FormField__Input"
+                placeholder="Enter your password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="FormField">
+              <button
+                className="FormField__Button mr-20"
+                onClick={this.handleSubmit}
+              >
+                Log In
+              </button>{" "}
+            </div>
+          </React.Fragment>
+        )}
       </div>
     );
   }

@@ -3,6 +3,13 @@ import Axios from "axios";
 import jwt_decode from "jwt-decode";
 import React from "react";
 
-export default function LogInAction() {
-  return <div></div>;
+export default function LogInAction(user) {
+  return dispatch => {
+    console.log("logInUser");
+    console.log(user);
+    Axios.post("http://localhost:5000/logIn/logIn", {
+      email: user.email,
+      password: user.password
+    });
+  };
 }
