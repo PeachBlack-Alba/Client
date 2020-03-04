@@ -4,7 +4,7 @@ import {
   FETCH_LOGOUT_SUCCESS
 } from "../ActionTypes";
 import Axios from "axios";
-// import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 
 import React from "react";
 
@@ -17,8 +17,8 @@ export function loginAction(email, password) {
     })
       .then(data => {
         console.log("data", data);
-
-        dispatch(loginSuccess(data));
+        const decoded = jwt_decode(res.data.token);
+        dispatch(loginSuccess(data, decoded));
       })
       .catch(err => {
         console.log(err.response.data);
@@ -35,7 +35,8 @@ const loginSuccess = data => {
     type: "FETCH_LOGIN_SUCCESS",
     success: true,
     isLoggedIn: true,
-    isError: false
+    isError: false,
+    username: decoded.username
   };
 };
 
