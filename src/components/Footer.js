@@ -1,30 +1,30 @@
 import React, { Component } from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
-// import home from "../media/homeIcon.png"; //cambiar
+import landing from "./Landing";
+import home from "../images/home.png";
 
 export default class Footer extends Component {
   render() {
     return (
       <div>
-        <footer id="sticky-footer" className="py-4 bg-secondary text-dark-50">
+        <footer>
           <div className="container text-center">
             <small>
-              <Link to="">
-                {/* <img
+              <Link to="/" className="footer">
+                <img
                   className="homeButton"
-                  src={} // cambiar
+                  src={home}
                   alt="home"
                   style={{
-                    width: 70,
+                    width: 60,
                     display: "block",
                     marginLeft: "auto",
                     marginRight: "auto",
                     marginTop: 10,
                     marginBottom: 10
                   }}
-                ></img> */}
-                <p>Footer</p>
+                ></img>
               </Link>
             </small>
           </div>

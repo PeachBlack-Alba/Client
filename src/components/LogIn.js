@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { loginAction } from "../Store/Actions/LogInAction";
 import { connect } from "react-redux";
+import Footer from "./Footer";
 
 class LogIn extends Component {
   constructor() {
@@ -125,6 +126,9 @@ class LogIn extends Component {
             </div>
           </React.Fragment>
         )}
+        <React.Fragment>
+          <Footer></Footer>;
+        </React.Fragment>
       </div>
     );
   }

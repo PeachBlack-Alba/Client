@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./Footer";
 
 export default class Landing extends Component {
   render() {
@@ -33,7 +32,6 @@ export default class Landing extends Component {
             <Link to="/logIn" className="rainbow rainbow-1">
               Log In!
             </Link>
-            <Footer></Footer>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import signUpUser from "../Store/Actions/SignUpActions";
+import Footer from "../components/Footer";
 
 class SignUp extends Component {
   constructor() {
@@ -168,6 +169,9 @@ class SignUp extends Component {
             </form>
           </div>
         )}
+        <React.Fragment>
+          <Footer></Footer>
+        </React.Fragment>
       </div>
     );
   }
