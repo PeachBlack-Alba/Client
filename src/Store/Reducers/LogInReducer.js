@@ -5,7 +5,8 @@ import { FETCH_LOGOUT_SUCCESS } from "../ActionTypes";
 const initialState = {
   isLoggedIn: false,
   isError: false,
-  token: ""
+  token: "",
+  message: ""
 };
 export default (state = initialState, action) => {
   console.log(action.payload);
@@ -14,22 +15,25 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: true,
-        isError: false,
-        token: action.payload.token
+        // isError: action.payload.error,
+        token: action.token,
+        message: action.message
       };
     case FETCH_LOGIN_ERROR:
       return {
         ...state,
         isLoggedIn: false,
-        isError: false,
-        token: action.payload.token
+        // isError: action.payload.error,
+        token: action.token,
+        message: action.message
       };
     case FETCH_LOGOUT_SUCCESS:
       return {
         ...state,
         isLoggedIn: false,
-        isError: false,
-        token: action.payload.token
+        // isError: action.payload.error,
+        token: action.token,
+        message: action.message
       };
     default:
       return state;

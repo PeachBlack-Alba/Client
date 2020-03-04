@@ -12,6 +12,7 @@ class LogIn extends Component {
       password: "",
       isLoggedIn: false,
       token: "",
+      message: "",
       error: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -52,6 +53,10 @@ class LogIn extends Component {
   }
 
   logInRender() {
+    console.log("this.state.token", this.state.token);
+
+    // setValue(event.target.value);
+
     return (
       <div>
         <h1>Welcome to QueerMeUp {this.state.username}</h1>
@@ -136,7 +141,10 @@ class LogIn extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    logIn: state.logIn
+    logIn: state.logIn,
+    error: state.error,
+    message: state.message,
+    username: state.username
   };
 };
 const mapDispatchToProps = dispatch => ({
