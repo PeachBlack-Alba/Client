@@ -71,7 +71,7 @@ class LogIn extends Component {
     console.log(this.props);
     return (
       <div>
-        <div className="PageSwitcher">
+        {/* <div className="PageSwitcher">
           <Link
             exact
             to="/Login"
@@ -87,7 +87,7 @@ class LogIn extends Component {
           >
             Sign Up
           </Link>
-        </div>
+        </div> */}
         <h1>Log In</h1>
         {this.props.logIn.isLoggedIn ? (
           this.logInRender()

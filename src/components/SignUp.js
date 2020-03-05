@@ -58,7 +58,7 @@ class SignUp extends Component {
 
   loginSuccesRender = (
     <div>
-      <p>Thank you you are now a queer member!</p>
+      <p>Thank you, you are now a queer member!</p>
       <Link to="/logIn">
         <p>Log in</p>
       </Link>
@@ -68,7 +68,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <div className="PageSwitcher">
+        {/* <div className="PageSwitcher">
           <Link to="/Login" className="PageSwitcher__Item">
             Log In
           </Link>
@@ -79,7 +79,7 @@ class SignUp extends Component {
           >
             Sign Up
           </a>
-        </div>
+        </div> */}
         <h1>Sign Up</h1>
         {this.state.logginSuccess ? (
           this.loginSuccesRender

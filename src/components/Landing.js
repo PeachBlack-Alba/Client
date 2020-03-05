@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { connect } from "react-redux";
 
-export default class Landing extends Component {
+class Landing extends Component {
   render() {
     return (
       <div className="landingContent">
@@ -25,16 +26,31 @@ export default class Landing extends Component {
           <Link to="/citiesPage" className="start">
             Let's Start!
           </Link>
-          <div className="container text-center">
-            <Link to="/signUp" className="rainbow rainbow-1">
-              Sign Up!
-            </Link>
-            <Link to="/logIn" className="rainbow rainbow-1">
-              Log In!
-            </Link>
-          </div>
+
+          {this.props.logIn.isLoggedIn ? (
+            <p>hello {this.props.logIn.user.username}</p>
+          ) : (
+            <div className="container text-center">
+              <Link to="/signUp" className="rainbow rainbow-1">
+                Sign Up!
+              </Link>
+              <Link to="/logIn" className="rainbow rainbow-1">
+                Log In!
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     );
   }
 }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    logIn: state.logIn,
+    error: state.error,
+    message: state.message,
+    user: state.user
+  };
+};
+export default connect(mapStateToProps)(Landing);

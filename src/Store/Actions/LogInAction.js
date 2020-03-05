@@ -31,6 +31,7 @@ export function loginAction(email, password) {
 // Exporting constants
 
 export function loginSuccess(token) {
+  console.log("in login success");
   const decoded = jwt_decode(token);
   return {
     type: "FETCH_LOGIN_SUCCESS",

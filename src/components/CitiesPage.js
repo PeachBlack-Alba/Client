@@ -3,6 +3,8 @@ import { Form, Row } from "react-bootstrap";
 import Cities from "./Cities";
 import { connect } from "react-redux";
 import { fetchCities } from "../Store/Actions/CityActions";
+import Header from "./Header";
+
 class CitiesPage extends Component {
   state = {
     cities: [], // creamos un empty array, cada vez que el state varia, se render la funcióndentro de render con la información modificada
@@ -37,6 +39,8 @@ class CitiesPage extends Component {
     console.log(filteredCities);
     return (
       <div className="citiesDisplay">
+        {/* <Header></Header> */}
+
         <Form className="searchBar">
           <Form.Control
             type="text"
