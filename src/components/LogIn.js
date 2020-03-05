@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { loginAction } from "../Store/Actions/LogInAction";
 import { connect } from "react-redux";
 import Footer from "./Footer";
+import Header from "./Header";
 
 class LogIn extends Component {
   constructor() {
@@ -59,9 +60,10 @@ class LogIn extends Component {
 
     return (
       <div>
+        <Header></Header>
         <h1>Welcome to QueerMeUp {this.state.username}</h1>
         <Link to="/citiespage">
-          <p>something</p>
+          <p>Start Queering up</p>
         </Link>
       </div>
     );
@@ -88,7 +90,7 @@ class LogIn extends Component {
             Sign Up
           </Link>
         </div> */}
-        <h1>Log In</h1>
+        {/* <h1>Log In</h1> */}
         {this.props.logIn.isLoggedIn ? (
           this.logInRender()
         ) : (
@@ -129,11 +131,9 @@ class LogIn extends Component {
                 Log In
               </button>{" "}
             </div>
+            <Footer></Footer>
           </React.Fragment>
         )}
-        <React.Fragment>
-          <Footer></Footer>;
-        </React.Fragment>
       </div>
     );
   }
