@@ -8,26 +8,10 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        <footer>
-          <div className="container text-center">
-            <small>
-              <Link to="/" className="footer">
-                <img
-                  className="homeButton"
-                  src={home}
-                  alt="home"
-                  style={{
-                    width: 60,
-                    display: "block",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    marginTop: 10,
-                    marginBottom: 10
-                  }}
-                ></img>
-              </Link>
-            </small>
-          </div>
+        <footer className="footer">
+          <Link to="/" className="footer">
+            <img className="homeButton" src={home} alt="home"></img>
+          </Link>
         </footer>
       </div>
     );

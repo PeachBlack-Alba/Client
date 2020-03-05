@@ -17,12 +17,13 @@ export function loginAction(email, password) {
     })
       .then(data => {
         console.log("data", data);
-        const decoded = jwt_decode(res.data.token);
+        const decoded = jwt_decode(data.token);
+        localStorage.setItem("token", data.data.token);
         dispatch(loginSuccess(data, decoded));
       })
       .catch(err => {
-        console.log(err.response.data);
-        dispatch(loginError(err.response.data));
+        console.log(err.response);
+        dispatch(loginError(err.response));
       });
   };
 }
@@ -30,13 +31,15 @@ export function loginAction(email, password) {
 // Importing constants
 
 const loginSuccess = data => {
-  localStorage.setItem("token", data.data.token);
+  const decoded = jwt_decode(data.token);
+
   return {
     type: "FETCH_LOGIN_SUCCESS",
     success: true,
     isLoggedIn: true,
     isError: false,
-    username: decoded.username
+    username: decoded.username,
+    token: data.payload.token
   };
 };
 
