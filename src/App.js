@@ -7,8 +7,16 @@ import CitiesPage from "./components/CitiesPage";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import Itinerary from "./components/Itinerary";
+import { loginSuccess } from "./Store/Actions/LogInAction";
 
 function App() {
+  console.log("localStorage", localStorage.getItem("token"));
+  if (localStorage.getItem("token") !== null) {
+    localStorage.getItem("token");
+  } else if (window.location.search.includes("?code")) {
+    //import funtion so if there the token and still not expired, the sesión sigue abierta
+    loginSuccess();
+  }
   return (
     <BrowserRouter>
       <div className="App">

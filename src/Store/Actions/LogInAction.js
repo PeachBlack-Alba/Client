@@ -4,9 +4,9 @@ import {
   FETCH_LOGOUT_SUCCESS
 } from "../ActionTypes";
 import Axios from "axios";
-import jwt_decode from "jwt-decode";
-
 import React from "react";
+
+const jwt_decode = require("jwt-decode");
 
 export function loginAction(email, password) {
   return dispatch => {
@@ -17,9 +17,9 @@ export function loginAction(email, password) {
     })
       .then(data => {
         console.log("data", data);
-        const decoded = jwt_decode(data.token);
+
         localStorage.setItem("token", data.data.token);
-        dispatch(loginSuccess(data, decoded));
+        dispatch(loginSuccess(data.data.token));
       })
       .catch(err => {
         console.log(err.response);
@@ -28,18 +28,16 @@ export function loginAction(email, password) {
   };
 }
 
-// Importing constants
+// Exporting constants
 
-export function loginSuccess(data) {
-  const decoded = jwt_decode(data.token);
-
+export function loginSuccess(token) {
+  const decoded = jwt_decode(token);
   return {
     type: "FETCH_LOGIN_SUCCESS",
     success: true,
     isLoggedIn: true,
     isError: false,
-    username: decoded.username,
-    token: data.payload.token
+    user: decoded
   };
 }
 
@@ -48,7 +46,7 @@ export function loginError(data) {
     type: "FETCH_LOGIN_ERROR",
     isLoggedIn: false,
     isError: true,
-    email: null
+    user: null
   };
 }
 
@@ -58,6 +56,6 @@ export function logOut(data) {
     type: "LOG_OUT",
     isLoggedIn: false,
     error: false,
-    email: null
+    user: null
   };
 }

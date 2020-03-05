@@ -144,7 +144,7 @@ const mapStateToProps = state => {
     logIn: state.logIn,
     error: state.error,
     message: state.message,
-    username: state.username
+    user: state.user
   };
 };
 const mapDispatchToProps = dispatch => ({
