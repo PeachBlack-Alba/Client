@@ -154,7 +154,6 @@ p {
   position: absolute;
   bottom: 5%;
   right: 5%;
-  left: 5%;
   top: 5%;
 }
 
@@ -179,10 +178,22 @@ p {
 }
 
 .pactivities {
-  color: black;
+  color: white;
 }
 .noactivities {
-  color: black;
+  color: white;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: transparent;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
 }
 
 /*********************************************************************Sign Up*******************************************************/

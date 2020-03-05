@@ -30,7 +30,7 @@ export function loginAction(email, password) {
 
 // Importing constants
 
-const loginSuccess = data => {
+export function loginSuccess(data) {
   const decoded = jwt_decode(data.token);
 
   return {
@@ -41,18 +41,18 @@ const loginSuccess = data => {
     username: decoded.username,
     token: data.payload.token
   };
-};
+}
 
-const loginError = data => {
+export function loginError(data) {
   return {
     type: "FETCH_LOGIN_ERROR",
     isLoggedIn: false,
     isError: true,
     email: null
   };
-};
+}
 
-const logOut = data => {
+export function logOut(data) {
   localStorage.clear();
   return {
     type: "LOG_OUT",
@@ -60,4 +60,4 @@ const logOut = data => {
     error: false,
     email: null
   };
-};
+}
