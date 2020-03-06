@@ -39,8 +39,7 @@ class CitiesPage extends Component {
     console.log(filteredCities);
     return (
       <div className="citiesDisplay">
-        {/* <Header></Header> */}
-
+        <Header></Header>
         <Form className="searchBar">
           <Form.Control
             type="text"

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { loginAction } from "../Store/Actions/LogInAction";
 import { connect } from "react-redux";
 import Footer from "./Footer";
-import Header from "./Header";
+import home from "../images/home.png";
+import { logOutAction } from "../Store/Actions/LogInAction";
 
 class LogIn extends Component {
   constructor() {
@@ -53,18 +54,25 @@ class LogIn extends Component {
     }
   }
 
+  logOutUser() {
+    this.props.history.push("/"); //Push the url for the homepage onto the history prop
+  }
+
   logInRender() {
     console.log("this.state.token", this.state.token);
 
-    // setValue(event.target.value);
-
     return (
       <div>
-        <Header></Header>
         <h1>Welcome to QueerMeUp {this.state.username}</h1>
-        <Link to="/citiespage">
-          <p>Start Queering up</p>
+        <Link to="/citiespage" className="start">
+          Start Queering up
         </Link>
+        <Link to="/" className="inicio">
+          <img className="homeButton" src={home} alt="home"></img>
+        </Link>
+        <button className="logout" onClick={() => this.props.logOutAction()}>
+          Log Out
+        </button>
       </div>
     );
   }
@@ -73,28 +81,12 @@ class LogIn extends Component {
     console.log(this.props);
     return (
       <div>
-        {/* <div className="PageSwitcher">
-          <Link
-            exact
-            to="/Login"
-            ClassName="PageSwitcher__Item--Active"
-            className="PageSwitcher__Item"
-          >
-            Log In
-          </Link>
-          <Link
-            to="/SignUp"
-            activeClassName="PageSwitcher__Item--Active"
-            className="PageSwitcher__Item"
-          >
-            Sign Up
-          </Link>
-        </div> */}
-        {/* <h1>Log In</h1> */}
         {this.props.logIn.isLoggedIn ? (
           this.logInRender()
         ) : (
           <React.Fragment>
+            <h1>Log In</h1>
+
             <div className="FormField">
               <label className="FormField__Label" htmlFor="email">
                 Email adress
@@ -147,7 +139,10 @@ const mapStateToProps = state => {
     user: state.user
   };
 };
-const mapDispatchToProps = dispatch => ({
-  loginAction: (email, password) => dispatch(loginAction(email, password))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  loginAction: (email, password) => dispatch(loginAction(email, password)),
+  logOutAction: () => {
+    dispatch(logOutAction(ownProps));
+  }
 });
-export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LogIn));

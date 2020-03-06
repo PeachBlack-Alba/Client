@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../index.css";
 import { Link } from "react-router-dom";
-import { logOut } from "../Store/Actions/LogInAction";
+import { logOutAction } from "../Store/Actions/LogInAction";
 import home from "../images/home.png";
 
 class Header extends Component {
@@ -15,7 +15,11 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <Link className="logout" to="/" onClick={() => this.props.logOut()}>
+        <Link
+          className="logout"
+          to="/"
+          onClick={() => this.props.logOutAction()}
+        >
           Log Out
         </Link>
         <Link to="/" className="inicio">
@@ -26,9 +30,13 @@ class Header extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    logOut: () => dispatch(logOut())
+    logOutAction: () => {
+      dispatch(logOutAction(ownProps));
+
+      // this.props.history.push("/");
+    }
   };
 };
 

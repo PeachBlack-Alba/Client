@@ -33,7 +33,6 @@ export default (state = initialState, action) => {
         isLoggedIn: false,
         isError: false,
         user: null
-        //message: action.message
       };
     default:
       return state;

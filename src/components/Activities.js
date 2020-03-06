@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "./Header";
 
 export default class Activities extends Component {
   render() {
@@ -8,7 +7,6 @@ export default class Activities extends Component {
 
     return (
       <div>
-        {/* <Header></Header> */}
         {activities.map((activity, index) => (
           <div key={index}>
             <img

@@ -16,10 +16,7 @@ class App extends Component {
     const token = localStorage.getItem("token");
     if (token !== null) {
       this.props.loginSuccess(token);
-      //localStorage.getItem("token");
-    } else if (window.location.search.includes("?code")) {
-      //import funtion so if there the token and still not expired, the sesión sigue abierta
-      //loginSuccess();
+      // } else if (window.location.replace("/")) {
     }
   }
   componentDidMount() {
@@ -43,12 +40,6 @@ class App extends Component {
 }
 const mapStateToProps = state => {
   return state;
-  // return {
-  //   logIn: state.logIn,
-  //   error: state.error,
-  //   message: state.message,
-  //   user: state.user
-  // };
 };
 const mapDispatchToProps = dispatch => ({
   loginSuccess: token => dispatch(loginSuccess(token))
