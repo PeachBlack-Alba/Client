@@ -8,7 +8,7 @@ class Landing extends Component {
     return (
       <div className="landingContent">
         <div className="">
-          <h1 className="title">
+          <h1 className="tittle">
             <span className="a">Qu</span>
             <span className="b">ee</span>
             <span className="c">r</span>
@@ -19,7 +19,7 @@ class Landing extends Component {
           </h1>
         </div>
         <div>
-          <p>
+          <p className="p_landing">
             Find the perfect queer activities, bars, shows and events in your
             favourite city
           </p>
