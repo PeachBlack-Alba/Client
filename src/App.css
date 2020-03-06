@@ -136,6 +136,7 @@ p {
 .searchBar {
   display: flex;
   margin-left: 15px;
+  margin-top: 20px;
 }
 .cityName {
   text-align: center;
@@ -287,4 +288,22 @@ footer {
   bottom: 0;
   right: 0;
   /* padding-bottom: 60px; */
+}
+
+/*Header*/
+
+.containerHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logout {
+  background-color: #ff48c4;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 20px;
+}
+.inicio {
 }
