@@ -60,10 +60,8 @@ export function logOut(data) {
     user: null
   };
 }
-export function logOutAction(ownProps) {
+export function logOutAction() {
   return dispatch => {
     dispatch(logOut());
-    console.log("ownProps", ownProps);
-    ownProps.history.push("/");
   };
 }

@@ -70,9 +70,9 @@ class LogIn extends Component {
         <Link to="/" className="inicio">
           <img className="homeButton" src={home} alt="home"></img>
         </Link>
-        <button className="logout" onClick={() => this.props.logOutAction()}>
+        {/* <button className="logout" onClick={() => this.props.logOutAction()}>
           Log Out
-        </button>
+        </button> */}
       </div>
     );
   }
