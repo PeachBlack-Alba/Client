@@ -30,9 +30,9 @@ export default (state = initialState, action) => {
     case FETCH_LOGOUT_SUCCESS:
       return {
         ...state,
-        isLoggedIn: action.isLoggedIn,
-        isError: action.error,
-        user: action.user
+        isLoggedIn: false,
+        isError: null,
+        user: null
       };
     default:
       return state;

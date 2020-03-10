@@ -12,17 +12,19 @@ class Header extends Component {
       isLoggedIn: false
     };
   }
-  componentDidMount() {
-    if (!this.props.isLoggedIn) {
-      console.log("REDIRECT");
-      this.props.history.push("/");
-    }
-  }
+  // componentDidMount() {
+  //   if (!this.props.isLoggedIn) {
+  //     console.log("REDIRECT");
+  //     this.props.history.push("/");
+  //   }
+  // }
   handleLogOut(e) {
     console.log("in handle logout");
+    e.preventDefault();
     this.props.logOutAction();
+    this.props.history.push("/");
     console.log("this.props.isLoggedIn", this.props.isLoggedIn);
-    window.location.reload(); // when refresh the page goes to componentdidmount and " this.props.history.push("/");" pushes it to the home page
+    //window.location.reload(); // when refresh the page goes to componentdidmount and " this.props.history.push("/");" pushes it to the home page
   }
   render() {
     return (

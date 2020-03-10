@@ -5,6 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Activities from "../components/Activities";
+import Header from "../components/Header";
 
 class Itinerary extends Component {
   state = {
@@ -23,6 +24,8 @@ class Itinerary extends Component {
     //let itinerariesData = this.props.itineraries.itineraries
     return (
       <div className="itinerariesContent">
+        <Header></Header>
+
         <h1>Welcome to {this.props.match.params.city}</h1>
         {itineraries.map((itinerary, index) => {
           return (

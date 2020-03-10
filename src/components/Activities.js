@@ -25,8 +25,9 @@ export default class Activities extends Component {
                 marginRight: 10
               }}
             />
-
+            {/* put favourites in activities */}
             <p className="pactivities">{activity.name}</p>
+
             <p className="pactivities">More info: {activity.moreinfo}</p>
           </div>
         ))}

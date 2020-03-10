@@ -2,10 +2,12 @@ import { FETCH_SIGNUP_SUCCESS, FETCH_SIGNUP_ERROR } from "../ActionTypes";
 import Axios from "axios";
 
 export default function signUpUser(user) {
+  // takes the user information from the signup component
   return dispatch => {
     console.log("signUpUser");
     console.log(user);
     Axios.post("http://localhost:5000/signUp/signUp", {
+      // passing information from user to the req.body
       picture: user.picture,
       username: user.username,
       email: user.email,

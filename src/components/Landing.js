@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
+// import Buttontest from "./Buttontest";
 
 class Landing extends Component {
   render() {
@@ -14,8 +15,8 @@ class Landing extends Component {
             <span className="c">r</span>
             <span className="d">M</span>
             <span className="e">e</span>
-            <span className="f">U</span>
-            <span className="a">P</span>
+            <span className="f">A</span>
+            <span className="a">PP</span>
           </h1>
         </div>
         <div>
@@ -41,6 +42,7 @@ class Landing extends Component {
               </Link>
             </div>
           )}
+          {/* <Buttontest></Buttontest> */}
         </div>
       </div>
     );

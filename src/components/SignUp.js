@@ -28,13 +28,15 @@ class SignUp extends Component {
     let name = target.name; // name attribute of the input, so we know what changes if the email or the password
     // whenever the input change we restate the state :
     this.setState({
+      // set user information in the state
       [name]: value
     });
     console.log(this.state);
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    // when we have all the information in the state we want to pass it to the back end
+    e.preventDefault(); // stops the page from refreshing on submit
     console.log("handleSubmit");
     const user = this.state;
     console.log(user);
@@ -68,18 +70,6 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        {/* <div className="PageSwitcher">
-          <Link to="/Login" className="PageSwitcher__Item">
-            Log In
-          </Link>
-          <a
-            href="#"
-            activeClassName="PageSwitcher__Item--Active"
-            className="PageSwitcher__Item"
-          >
-            Sign Up
-          </a>
-        </div> */}
         <h1>Sign Up</h1>
         {this.state.logginSuccess ? (
           this.loginSuccesRender
@@ -177,6 +167,6 @@ class SignUp extends Component {
   }
 }
 const mapDispatchToProps = dispatch => ({
-  signUpUser: user => dispatch(signUpUser(user))
+  signUpUser: user => dispatch(signUpUser(user)) // Passing user onformation to the store
 });
 export default connect(null, mapDispatchToProps)(SignUp);

@@ -4,21 +4,23 @@ import {
   FETCH_LOGOUT_SUCCESS
 } from "../ActionTypes";
 import Axios from "axios";
-import React from "react";
 
 const jwt_decode = require("jwt-decode");
 
 export function loginAction(email, password) {
+  //takes email and password from the state of login
   return dispatch => {
     console.log(password);
     Axios.post("http://localhost:5000/logIn/logIn", {
+      //passes information in the req.body
       email: email,
       password: password
     })
       .then(data => {
+        // we get the token back from the back end (is the "res" from the login route)
         console.log("data", data);
 
-        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("token", data.data.token); //setting the token in the local store
         dispatch(loginSuccess(data.data.token));
       })
       .catch(err => {
@@ -32,7 +34,7 @@ export function loginAction(email, password) {
 
 export function loginSuccess(token) {
   console.log("in login success");
-  const decoded = jwt_decode(token);
+  const decoded = jwt_decode(token); // takes the payload information and decodes it so we can see the information
   return {
     type: "FETCH_LOGIN_SUCCESS",
     success: true,
@@ -52,15 +54,12 @@ export function loginError(data) {
 }
 
 export function logOut(data) {
-  localStorage.clear();
   return {
-    type: "LOG_OUT",
-    isLoggedIn: false,
-    error: false,
-    user: null
+    type: "FETCH_LOGOUT_SUCCESS"
   };
 }
 export function logOutAction() {
+  localStorage.clear();
   return dispatch => {
     dispatch(logOut());
   };
