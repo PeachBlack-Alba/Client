@@ -60,6 +60,14 @@ h1 {
 p {
   text-align: center;
   color: white;
+  font-size: medium;
+}
+
+.helloName {
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+  font-size: medium;
 }
 
 /*buttons*/
