@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import fav3 from "../images/fav3.png";
 
-class Buttontest extends Component {
+export default class Buttontest extends Component {
   constructor() {
     super();
     this.state = {
@@ -25,7 +26,8 @@ class Buttontest extends Component {
     const label = this.state.liked;
     return (
       <div className="customContainer">
-        <button className="btn btn-primary" onClick={this.handleChange}>
+        <button className="" onClick={this.handleChange}>
+          <img className="likeButton" src={fav3} alt="home"></img>
           {/* //onClick={this.handleSubmit} */}
           {label}
         </button>
@@ -34,7 +36,3 @@ class Buttontest extends Component {
     );
   }
 }
-
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Buttontest)
-);

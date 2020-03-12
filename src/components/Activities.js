@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
+import Buttontest from "../components/Buttontest";
 
 export default class Activities extends Component {
   render() {
     console.log(this.props);
     const { activities } = this.props;
+    console.log("activities", activities);
 
     return (
       <div>
@@ -27,13 +29,23 @@ export default class Activities extends Component {
               }}
             />
             {/* put favourites in activities */}
-            <p className="pactivities">{activity.name}</p>
+            <div className="informacionActividades">
+              <p className="pactivities">{activity.name}</p>
 
-            <p className="pactivities">
-              <a onClick={() => (window.location.href = activity.moreinfo)}>
-                More info:
-              </a>
-            </p>
+              <button
+                onClick={() => {
+                  let win = window.open("");
+                  win.location.replace(activity.moreinfo);
+                }}
+              >
+                More info
+              </button>
+              {/* <a onClick={() => (window.location.href = activity.moreinfo)}>
+                  More info:
+                </a> */}
+
+              {/* <Buttontest></Buttontest> */}
+            </div>
           </div>
         ))}
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchItineraries } from "../Store/Actions/ItineraryActions";
 import Accordion from "react-bootstrap/Accordion";
+import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Activities from "../components/Activities";
