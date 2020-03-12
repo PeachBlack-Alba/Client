@@ -35,7 +35,7 @@ export default class Activities extends Component {
               <button
                 onClick={() => {
                   let win = window.open("");
-                  win.location.replace(activity.moreinfo);
+                  win.location.replace("//" + activity.moreinfo);
                 }}
               >
                 More info

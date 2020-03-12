@@ -8,7 +8,7 @@ export default class Buttontest extends Component {
     super();
     this.state = {
       username: "",
-      itineraryId: this.props.itineraryId,
+      activitiesId: this.props.activities.Id,
       liked: false
     };
     this.handleClick = this.handleClick.bind(this);
