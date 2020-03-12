@@ -40,7 +40,7 @@ class Itinerary extends Component {
                   >
                     {itinerary.title}
                   </Accordion.Toggle>
-
+                  {/* change to charosel */}
                   <Accordion.Collapse eventKey={itinerary.id}>
                     <Card.Body className="card">
                       {itinerary.activities ? (

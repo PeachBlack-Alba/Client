@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   background-image: url(https://i.pinimg.com/564x/ec/ab/ba/ecabba37563299a5dba87d6058df3aac.jpg);
@@ -41,15 +47,18 @@ body {
   color: #732982;
 }
 
-/* Landing page  */
+/********************** Landing page  *************************/
 
 .landingContent {
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  left: 10%;
-  top: 10%;
-  margin-top: 100px;
+  width: 350px;
+  min-height: 450px;
+  height: auto;
+  border-radius: 5px;
+  padding-top: 40%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 h1 {
   text-align: center;
@@ -70,7 +79,7 @@ p {
   font-size: medium;
 }
 
-/*buttons*/
+/********************* buttons ************************/
 .container {
   display: flex;
   align-content: space-between;
@@ -137,9 +146,7 @@ p {
   padding-bottom: 40px;
 }
 
-/*Description*/
-
-/*Cities title, country, searchBar*/
+/**************************** Cities title, country, searchBar *************************/
 
 .searchBar {
   display: flex;
@@ -166,7 +173,6 @@ p {
   font-size: 18px;
 }
 .citiesDisplay {
-  /* margin: 40px 40px 40px 40px; */
   position: absolute;
   bottom: 5%;
   right: 5%;
@@ -177,7 +183,7 @@ p {
   background-color: transparent;
 }
 
-/*Itineraries Page*/
+/************************* Itineraries Page **********************/
 .itinerariesInformation {
   text-align: center;
   color: white;
@@ -212,7 +218,7 @@ p {
   border-radius: 0.25rem;
 }
 
-/*Sign Up*/
+/****************************** Sign Up ************************************/
 
 .PageSwitcher {
   display: flex;
@@ -288,17 +294,16 @@ p {
   font-weight: 500;
 }
 
-/*Footer*/
+/******************************************** Footer ******************************/
 
 footer {
   position: relative;
   left: 0;
   bottom: 0;
   right: 0;
-  /* padding-bottom: 60px; */
 }
 
-/*Header*/
+/************************************** Header ********************************/
 
 .containerHeader {
   display: flex;

@@ -35,7 +35,7 @@ class Header extends Component {
         <Link to="/" className="inicio">
           <img className="homeButton" src={home} alt="home"></img>
         </Link>{" "}
-      </div>
+      </div> // LACKING!!! add a return button from itineraries page to cities page
     );
   }
 }

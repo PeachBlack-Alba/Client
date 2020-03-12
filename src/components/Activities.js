@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { browserHistory } from "react-router";
 
 export default class Activities extends Component {
   render() {
@@ -28,7 +29,11 @@ export default class Activities extends Component {
             {/* put favourites in activities */}
             <p className="pactivities">{activity.name}</p>
 
-            <p className="pactivities">More info: {activity.moreinfo}</p>
+            <p className="pactivities">
+              <a onClick={() => (window.location.href = activity.moreinfo)}>
+                More info:
+              </a>
+            </p>
           </div>
         ))}
       </div>

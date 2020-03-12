@@ -37,27 +37,25 @@ class SignUp extends Component {
   handleSubmit(e) {
     // when we have all the information in the state we want to pass it to the back end
     e.preventDefault(); // stops the page from refreshing on submit
-    console.log("handleSubmit");
+
     const user = this.state;
-    console.log(user);
+
     if (
-      user.username !== "" ||
-      user.password !== "" ||
-      user.picture !== "" ||
-      user.passwordRepeat !== "" ||
+      user.username !== "" &&
+      user.password !== "" &&
+      user.passwordRepeat !== "" &&
       user.email !== ""
     ) {
-      if (user.passwordRepeat === user.password) {
+      if (user.passwordRepeat !== user.password) {
+        alert("Your password are not matching");
+      } else {
         this.props.signUpUser(user);
         this.setState({ logginSuccess: true });
-      } else {
-        alert("Your password are not matching");
       }
     } else {
       alert("You missed a field");
     }
   }
-
   loginSuccesRender = (
     <div>
       <p>Thank you, you are now a queer member!</p>
