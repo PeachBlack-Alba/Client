@@ -33,6 +33,7 @@ export default class Activities extends Component {
               <p className="pactivities">{activity.name}</p>
 
               <button
+                className="linkPaginaWeb"
                 onClick={() => {
                   let win = window.open("");
                   win.location.replace("//" + activity.moreinfo);
@@ -40,11 +41,8 @@ export default class Activities extends Component {
               >
                 More info
               </button>
-              {/* <a onClick={() => (window.location.href = activity.moreinfo)}>
-                  More info:
-                </a> */}
 
-              {/* <Buttontest></Buttontest> */}
+              <Buttontest props={this.props}></Buttontest>
             </div>
           </div>
         ))}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
-import landing from "./Landing";
 import home from "../images/home.png";
 
 export default class Footer extends Component {

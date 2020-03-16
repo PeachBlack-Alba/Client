@@ -8,10 +8,10 @@ export default class Buttontest extends Component {
     super();
     this.state = {
       username: "",
-      activitiesId: this.props.activities.Id,
+      // activitiesId: this.props.activities.Id,
       liked: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange() {
@@ -22,6 +22,8 @@ export default class Buttontest extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     const text = this.state.liked;
     const label = this.state.liked;
     return (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default class CitiesPage extends Component {
   state = {
-    cities: [], // creamos un empty array, cada vez que el state varia, se render la funcióndentro de render con la información modificada
+    cities: [], // create an empty array that changes everytime the state variates, it will render with the modify information
     fileterdCities: [],
     input: ""
   };
