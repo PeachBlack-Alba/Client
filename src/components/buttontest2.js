@@ -10,14 +10,14 @@ class LikeButton extends React.Component {
     this.state = {
       liked: this.props.liked,
       username: "",
-      itineraryId: this.props.itineraryId
+      activitiesId: this.props.activities.id
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   /* Check if user has favourites, post/remove from favourites*/
   handleClick() {
-    const itineraryId = this.props.itineraryId;
+    const activitiesId = this.props.activities.id;
 
     this.setState({
       liked: !this.state.liked
@@ -28,7 +28,7 @@ class LikeButton extends React.Component {
 
     if (!this.state.liked) {
       Axios.post("http://localhost:5000/users/addToFavorite", {
-        itineraryId,
+        activitiesId,
         username
       })
         .then(res => {
@@ -39,7 +39,7 @@ class LikeButton extends React.Component {
         });
     } else {
       Axios.post("http://localhost:5000/users/removeFromFavorite", {
-        itineraryId,
+        activitiesId,
         username
       })
         .then(res => {
@@ -52,9 +52,6 @@ class LikeButton extends React.Component {
   }
 
   render() {
-    // console.log('LIKE', this.state.liked)
-    // this.forceUpdate()
-    // onLikeChange(this.props.itineraryId, !this.props.liked)
     const label = this.state.liked ? "Unlike" : "Like";
 
     return (

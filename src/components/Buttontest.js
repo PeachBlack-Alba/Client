@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import fav3 from "../images/fav3.png";
+import noLiked from "../images/noLiked.png";
+import Liked from "../images/Liked.png";
 
 export default class Buttontest extends Component {
   constructor() {
     super();
     this.state = {
       username: "",
-      // activitiesId: this.props.activities.Id,
+      activitiesId: this.props.activities.id,
       liked: false
     };
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange() {
@@ -24,16 +23,12 @@ export default class Buttontest extends Component {
   render() {
     console.log(this.props);
 
-    const text = this.state.liked;
-    const label = this.state.liked;
     return (
       <div className="customContainer">
         <button className="" onClick={this.handleChange}>
-          <img className="likeButton" src={fav3} alt="home"></img>
+          <img className="likeButton" src={noLiked} alt="home"></img>
           {/* //onClick={this.handleSubmit} */}
-          {label}
         </button>
-        <p>you {text} this.</p>
       </div>
     );
   }

@@ -7,9 +7,16 @@ export default class Likebutton extends Component {
     this.state = {
       liked: this.props.liked,
       username: "",
-      itineraryId: this.props.itineraryId,
+      activitiesId: this.props.activities.id,
       count: 0
     };
+    this.handleClick = this.handleClick.bind(this);
+    handleClick() {
+      const activitiesId = this.props.activities.id;
+
+      this.setState({
+        liked: !this.state.liked
+      });
     incrementLikes = () => {
       let newCount = this.state.count + 1;
       this.setState({
