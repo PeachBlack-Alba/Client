@@ -17,6 +17,27 @@ export default class Likebutton extends Component {
       this.setState({
         liked: !this.state.liked
       });
+
+      const decoded = jwt_decode(localStorage.token);
+      const username = decoded.username;
+
+      if (!this.state.liked) {
+        Axios.post("http://localhost:5000/users/addToFavorite", {
+          activitiesId,
+          username
+        })
+          .then(res => {
+            console.log("fav", res);
+          })
+          .catch(err => {
+            console.log(err.response);
+          });
+      } else {
+        ????
+      }
+
+
+
     incrementLikes = () => {
       let newCount = this.state.count + 1;
       this.setState({
@@ -27,8 +48,8 @@ export default class Likebutton extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.incrementLikes}>
-          {/* <img className="LikeButton" src={like} alt="like"></img> */}
+        <button onClick={this.incrementLikes} onClick={this.handleClick}>
+          <img className="LikeButton" src={like} alt="like"></img> 
           Likes: {this.state.count}
         </button>
       </div>

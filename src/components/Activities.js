@@ -42,7 +42,7 @@ export default class Activities extends Component {
                 More info
               </button>
 
-              <Buttontest props={this.props}></Buttontest>
+              {/* <Buttontest props={this.props}></Buttontest> */}
             </div>
           </div>
         ))}

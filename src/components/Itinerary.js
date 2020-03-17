@@ -78,6 +78,7 @@ class Itinerary extends Component {
               <p className="itinerariesInformation">
                 Price (€):{itinerary.price}
               </p>
+              <p>Likes:{itinerary.favourites.length}</p>
               {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
               <p className="itinerariesInformation">{itinerary.dates}</p>
             </div>
