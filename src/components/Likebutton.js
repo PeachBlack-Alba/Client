@@ -22,25 +22,29 @@ class Likebutton extends Component {
   // all variables(usename, itiID), si es logged in, despues axios post y cuando tenemos res change state
 
   addToFav() {
-    const username = this.props.user.username;
-    const itiID = this.props.itineraries._id;
-    if (isLoggIn === true) {
+    const user = this.props.logIn.user;
+    const itiID = this.props.itiID;
+    if (user) {
+      console.log(user);
+      const userID = user.id;
       axios
-        .post("http://localhost:5000/users/addToFavorite", {
+        .post("http://localhost:5000/itineraries/addToFavorite", {
           itiID,
-          username
+          userID
         })
         .then(res => {
           console.log("fav", res);
+          if (res.status === 200) {
+            this.setState({
+              liked: !this.state.liked
+            });
+          }
         })
         .catch(err => {
           console.log(err.response);
         });
-      this.setState({
-        liked: !this.state.liked
-      });
     } else {
-      noone;
+      alert("You need to be logged in!");
     }
   }
 
