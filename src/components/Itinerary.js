@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchItineraries } from "../Store/Actions/ItineraryActions";
 import Accordion from "react-bootstrap/Accordion";
-import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Activities from "../components/Activities";
 import Header from "../components/Header";
+import Likebutton from "../components/Likebutton";
 
 class Itinerary extends Component {
   state = {
@@ -80,6 +80,7 @@ class Itinerary extends Component {
               </p>
               <p>Likes:{itinerary.favourites.length}</p>
               {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
+              <Likebutton itiID={itinerary._id}></Likebutton>
               <p className="itinerariesInformation">{itinerary.dates}</p>
             </div>
           );
