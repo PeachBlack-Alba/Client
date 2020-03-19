@@ -1,7 +1,8 @@
 import {
   FETCH_ITINERARIES_REQUESTED,
   FETCH_ITINERARIES_SUCCESS,
-  FETCH_ITINERARIES_ERROR
+  FETCH_ITINERARIES_ERROR,
+  ADD_FAV_SUCCESS
 } from "../ActionTypes";
 
 const initialState = {
@@ -29,6 +30,11 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: true
+      };
+    case ADD_FAV_SUCCESS:
+
+      return {
+        ...state,
       };
     default:
       // the dispatched action is not in this reducer, return the state unchanged
