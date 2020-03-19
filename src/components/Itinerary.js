@@ -20,7 +20,6 @@ class Itinerary extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { itineraries } = this.props.itineraries;
     //let itinerariesData = this.props.itineraries.itineraries
     return (
@@ -50,8 +49,8 @@ class Itinerary extends Component {
                           activities={itinerary.activities}
                         ></Activities>
                       ) : (
-                        <p className="noactivities">sorry no activities</p>
-                      )}
+                          <p className="noactivities">sorry no activities</p>
+                        )}
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -80,7 +79,7 @@ class Itinerary extends Component {
               </p>
               <p>Likes:{itinerary.favourites.length}</p>
               {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
-              <Likebutton itiID={itinerary._id}></Likebutton>
+              <Likebutton itinerary={itinerary}></Likebutton>
               <p className="itinerariesInformation">{itinerary.dates}</p>
             </div>
           );
@@ -90,7 +89,6 @@ class Itinerary extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
   return {
     itineraries: state.itineraries
   };
