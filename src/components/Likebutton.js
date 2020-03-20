@@ -3,7 +3,7 @@ import axios from "axios";
 import noLiked from "../images/noLiked.png";
 import liked from "../images/Liked.png";
 import { connect } from "react-redux";
-import { addToFavorite } from '../Store/Actions/ItineraryActions'
+import { addToFavorite } from "../Store/Actions/ItineraryActions";
 
 class Likebutton extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class Likebutton extends Component {
       console.log(user);
       const userID = user.id;
 
-      this.props.addToFavorite(itiID, userID)
+      this.props.addToFavorite(itiID, userID);
       // axios
       //   .post("http://localhost:5000/itineraries/addToFavorite", {
       //     itiID,
@@ -59,25 +59,26 @@ class Likebutton extends Component {
     });
   }
   isLiked() {
-    const userID = this.props.logIn.user.id
-    console.log('this.props.itinerary :', this.props.itinerary);
-    if (this.props.itinerary.favourites.includes(userID)) return true
-    else return false
+    const userID = this.props.logIn.user.id;
+    console.log("this.props.itinerary :", this.props.itinerary);
+    if (this.props.itinerary.favourites.includes(userID)) return true;
+    else return false;
   }
 
   render() {
     return (
       <div>
-        {this.isLiked() ?
-          <button >
+        {this.isLiked() ? (
+          <button>
             <img className="LikeButton" src={liked} alt="like"></img>
-          Likes: {this.props.itinerary.favourites.length}
+            Likes: {this.props.itinerary.favourites.length}
           </button>
-          :
+        ) : (
           <button onClick={this.handleClick}>
             <img className="LikeButton" src={noLiked} alt="like"></img>
-          Likes: {this.props.itinerary.favourites.length}
-          </button>}
+            Likes: {this.props.itinerary.favourites.length}
+          </button>
+        )}
       </div>
     );
   }

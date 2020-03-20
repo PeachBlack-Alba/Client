@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
-// import Buttontest from "./Buttontest";
+import Header from "../components/Header";
 
 class Landing extends Component {
   render() {
@@ -29,9 +29,12 @@ class Landing extends Component {
           </Link>
 
           {this.props.logIn.isLoggedIn ? (
-            <p className="helloName">
-              Hello, hello, hello! {this.props.logIn.user.username}
-            </p>
+            <React.Fragment>
+              <Header></Header>
+              <p className="helloName">
+                Hello, hello, hello! {this.props.logIn.user.username}
+              </p>
+            </React.Fragment>
           ) : (
             <div className="container text-center">
               <Link to="/signUp" className="rainbow rainbow-1">
