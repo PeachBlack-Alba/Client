@@ -82,7 +82,7 @@ class LogIn extends Component {
           this.logInRender()
         ) : (
           <React.Fragment>
-            <h1>Log In</h1>
+            <h1 className="loginh1">Log In</h1>
 
             <div className="FormField">
               <label className="FormField__Label" htmlFor="email">

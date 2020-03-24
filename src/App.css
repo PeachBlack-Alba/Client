@@ -230,7 +230,7 @@ p {
   font-size: 10px;
 }
 
-/****************************** Sign Up ************************************/
+/****************************** Sign Up / logIn ************************************/
 
 .PageSwitcher {
   display: flex;
@@ -270,6 +270,7 @@ p {
 }
 .FormField {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .FormField__Label {
@@ -304,6 +305,9 @@ p {
   padding: 15px 70px;
   font-size: 0.8em;
   font-weight: 500;
+}
+.loginh1 {
+  text-align: center;
 }
 
 /******************************************** Footer ******************************/
