@@ -73,11 +73,13 @@ p {
   font-size: medium;
 }
 
+/****************Landing if connected*******************/
+
 .helloName {
   text-align: center;
   color: white;
   margin-top: 30px;
-  font-size: medium;
+  font-size: 30px;
 }
 
 /********************* buttons ************************/

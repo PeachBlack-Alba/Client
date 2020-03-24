@@ -30,10 +30,10 @@ class Landing extends Component {
 
           {this.props.logIn.isLoggedIn ? (
             <React.Fragment>
-              <Header></Header>
               <p className="helloName">
                 Hello, hello, hello! {this.props.logIn.user.username}
               </p>
+              <Header></Header>
             </React.Fragment>
           ) : (
             <div className="container text-center">
