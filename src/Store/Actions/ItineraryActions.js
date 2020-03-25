@@ -42,17 +42,24 @@ const fetchItinerariesError = error => {
     payload: error
   };
 };
-export const addToFavorite = (itiID, userID) => dispatch => {
+export const addToFavorite = (
+  itiID,
+  userID,
+  activityname,
+  cityID
+) => dispatch => {
+  console.log(activityname);
   axios
-    .post("http://localhost:5000/itineraries/addToFavorite", {
+    .post("http://localhost:5000/activity/addtoFavourite", {
       itiID,
-      userID
+      userID,
+      activityname
     })
     .then(res => {
       if (res.status === 200) {
-        console.log('res.city_id :', res);
-        dispatch(fetchItineraries(res.data.city_id))
-        dispatch(addToFavSuccess())
+        console.log(res);
+        dispatch(fetchItineraries(cityID));
+        //dispatch(addToFavSuccess());
       }
     })
     .catch(err => {
@@ -62,6 +69,6 @@ export const addToFavorite = (itiID, userID) => dispatch => {
 
 const addToFavSuccess = () => {
   return {
-    type: ADD_FAV_SUCCESS,
+    type: ADD_FAV_SUCCESS
   };
 };

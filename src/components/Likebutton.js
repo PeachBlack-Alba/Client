@@ -16,8 +16,9 @@ class Likebutton extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick() {
+  handleClick(e) {
     console.log(this.props);
+    e.preventDefault();
     this.addToFav();
     // this.incrementLikes();
   }
@@ -26,11 +27,13 @@ class Likebutton extends Component {
   addToFav() {
     const user = this.props.logIn.user;
     const itiID = this.props.itinerary._id;
+    const activityname = this.props.activity.name;
+    const cityID = this.props.cityID;
+    console.log(user);
     if (user) {
-      console.log(user);
       const userID = user.id;
 
-      this.props.addToFavorite(itiID, userID);
+      this.props.addToFavorite(itiID, userID, activityname, cityID);
       // axios
       //   .post("http://localhost:5000/itineraries/addToFavorite", {
       //     itiID,
@@ -59,10 +62,11 @@ class Likebutton extends Component {
     });
   }
   isLiked() {
-    const userID = this.props.logIn.user.id;
-    console.log("this.props.itinerary :", this.props.itinerary);
-    if (this.props.itinerary.favourites.includes(userID)) return true;
-    else return false;
+    if (this.props.logIn.isLoggedIn === true) {
+      const userID = this.props.logIn.user.id;
+      console.log("this.props.itinerary :", this.props.itinerary);
+      if (this.props.activity.favourites.includes(userID)) return true;
+    } else return false;
   }
 
   render() {
@@ -91,7 +95,8 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => ({
-  addToFavorite: (itiID, userID) => dispatch(addToFavorite(itiID, userID))
+  addToFavorite: (itiID, userID, activityname, cityID) =>
+    dispatch(addToFavorite(itiID, userID, activityname, cityID))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Likebutton);

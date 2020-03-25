@@ -11,7 +11,7 @@ const initialState = {
   itineraries: []
 };
 export default (state = initialState, action) => {
-  console.log(action.payload);
+  //console.log(action.payload);
   switch (action.type) {
     case FETCH_ITINERARIES_REQUESTED:
       return {
@@ -20,6 +20,7 @@ export default (state = initialState, action) => {
       };
     case FETCH_ITINERARIES_SUCCESS:
       console.log("itineraries are fetched");
+      console.log("itin in reducer success", action.payload);
       return {
         ...state,
         isLoading: false,
@@ -32,9 +33,8 @@ export default (state = initialState, action) => {
         isError: true
       };
     case ADD_FAV_SUCCESS:
-
       return {
-        ...state,
+        ...state
       };
     default:
       // the dispatched action is not in this reducer, return the state unchanged

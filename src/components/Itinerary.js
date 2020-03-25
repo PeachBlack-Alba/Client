@@ -21,6 +21,7 @@ class Itinerary extends Component {
 
   render() {
     const { itineraries } = this.props.itineraries;
+    const cityID = this.props.match.params.city;
     //let itinerariesData = this.props.itineraries.itineraries
     return (
       <div className="itinerariesContent">
@@ -47,10 +48,12 @@ class Itinerary extends Component {
                         <Activities
                           className="accordion"
                           activities={itinerary.activities}
+                          itinerary={itinerary}
+                          cityID={cityID}
                         ></Activities>
                       ) : (
-                          <p className="noactivities">sorry no activities</p>
-                        )}
+                        <p className="noactivities">sorry no activities</p>
+                      )}
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -79,7 +82,7 @@ class Itinerary extends Component {
               </p>
               <p>Likes:{itinerary.favourites.length}</p>
               {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
-              <Likebutton itinerary={itinerary}></Likebutton>
+              {/* <Likebutton itinerary={itinerary}></Likebutton> */}
               <p className="itinerariesInformation">{itinerary.dates}</p>
             </div>
           );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
-import Buttontest from "../components/Buttontest";
+import Likebutton from "../components/Likebutton";
 
 export default class Activities extends Component {
   render() {
@@ -28,10 +28,9 @@ export default class Activities extends Component {
                 marginRight: 10
               }}
             />
-            {/* put favourites in activities */}
+
             <div className="informacionActividades">
               <p className="pactivities">{activity.name}</p>
-
               <button
                 className="linkPaginaWeb"
                 onClick={() => {
@@ -41,8 +40,11 @@ export default class Activities extends Component {
               >
                 More info
               </button>
-
-              {/* <Buttontest props={this.props}></Buttontest> */}
+              <Likebutton
+                itinerary={this.props.itinerary}
+                activity={activity}
+                cityID={this.props.cityID}
+              ></Likebutton>{" "}
             </div>
           </div>
         ))}
