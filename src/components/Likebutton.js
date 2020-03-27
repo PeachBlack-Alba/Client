@@ -9,9 +9,7 @@ class Likebutton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // liked: this.props.liked,
       username: "",
-      // activitiesId: this.props.activities.id,
       count: 0
     };
     this.handleClick = this.handleClick.bind(this);
@@ -20,9 +18,8 @@ class Likebutton extends Component {
     console.log(this.props);
     e.preventDefault();
     this.addToFav();
-    // this.incrementLikes();
+    this.incrementLikes();
   }
-  // all variables(usename, itiID), si es logged in, despues axios post y cuando tenemos res change state
 
   addToFav() {
     const user = this.props.logIn.user;
@@ -34,22 +31,6 @@ class Likebutton extends Component {
       const userID = user.id;
 
       this.props.addToFavorite(itiID, userID, activityname, cityID);
-      // axios
-      //   .post("http://localhost:5000/itineraries/addToFavorite", {
-      //     itiID,
-      //     userID
-      //   })
-      //   .then(res => {
-      //     console.log("fav", res);
-      //     if (res.status === 200) {
-      //       this.setState({
-      //         liked: !this.state.liked
-      //       });
-      //     }
-      //   })
-      //   .catch(err => {
-      //     console.log(err.response);
-      //   });
     } else {
       alert("You need to be logged in!");
     }
