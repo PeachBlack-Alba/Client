@@ -6,7 +6,6 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Activities from "../components/Activities";
 import Header from "../components/Header";
-import Likebutton from "../components/Likebutton";
 
 class Itinerary extends Component {
   state = {
@@ -16,13 +15,11 @@ class Itinerary extends Component {
   componentDidMount() {
     //this.fetchCities(); // Cuando la web está "montada", es cuando generamos la función fetchcities, con la información de cities (lista), por lo tanto el state varia y se render la función render de nuevo pero con la información modificada
     this.props.fetchItineraries(this.props.match.params.city);
-    //console.log(this.props);
   }
 
   render() {
     const { itineraries } = this.props.itineraries;
     const cityID = this.props.match.params.city;
-    //let itinerariesData = this.props.itineraries.itineraries
     return (
       <div className="itinerariesContent">
         <Header></Header>
@@ -41,7 +38,6 @@ class Itinerary extends Component {
                   >
                     {itinerary.title}
                   </Accordion.Toggle>
-                  {/* change to charosel */}
                   <Accordion.Collapse eventKey={itinerary.id}>
                     <Card.Body className="card">
                       {itinerary.activities ? (
@@ -80,9 +76,7 @@ class Itinerary extends Component {
               <p className="itinerariesInformation">
                 Price (€):{itinerary.price}
               </p>
-              <p>Likes:{itinerary.favourites.length}</p>
-              {/* <p className="cityCountry">{itineraries.hashtags}</p> */}
-              {/* <Likebutton itinerary={itinerary}></Likebutton> */}
+
               <p className="itinerariesInformation">{itinerary.dates}</p>
             </div>
           );
