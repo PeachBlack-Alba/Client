@@ -8,6 +8,7 @@ import LogIn from "./components/LogIn";
 import Itinerary from "./components/Itinerary";
 import { loginSuccess } from "./Store/Actions/LogInAction";
 import { connect } from "react-redux";
+import Container from "react-bootstrap/Container";
 
 import React, { Component } from "react";
 
@@ -25,15 +26,17 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/citiesPage" component={CitiesPage} />
-            <Route exact path="/signUp" component={SignUp} />
-            <Route exact path="/logIn" component={LogIn} />
-            <Route exact path="/itineraries/:city" component={Itinerary} />
-          </Switch>
-        </div>
+        <Container>
+          <div className="App">
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/citiesPage" component={CitiesPage} />
+              <Route exact path="/signUp" component={SignUp} />
+              <Route exact path="/logIn" component={LogIn} />
+              <Route exact path="/itineraries/:city" component={Itinerary} />
+            </Switch>
+          </div>
+        </Container>
       </BrowserRouter>
     );
   }

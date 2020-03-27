@@ -54,7 +54,7 @@ body {
   min-height: 450px;
   height: auto;
   border-radius: 5px;
-  padding-top: 40%;
+  padding-top: 30%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -63,7 +63,7 @@ body {
 h1 {
   text-align: center;
   color: white;
-  font-size: 50px;
+  font-size: 45px;
   width: 350px;
 }
 
@@ -335,7 +335,16 @@ footer {
   margin: 20px;
 }
 
-/*********************************** Like Button ************************************/
-.likeButton {
-  background-color: transparent;
+/*********************************** Activities page: like button and more info button ************************************/
+#Likebutton {
+  background-color: Transparent;
+}
+
+.linkPaginaWeb {
+  background-color: #ff48c4;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 20px;
 }

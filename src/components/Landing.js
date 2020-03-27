@@ -22,7 +22,7 @@ class Landing extends Component {
         <div>
           <p className="p_landing">
             Find the perfect queer activities, bars, shows and events in your
-            favourite city
+            favourite city. If you are an owner advertise your queer bussines!
           </p>
           <Link to="/citiesPage" className="start">
             Let's Start!
