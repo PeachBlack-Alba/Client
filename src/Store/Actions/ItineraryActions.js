@@ -57,9 +57,7 @@ export const addToFavorite = (
     })
     .then(res => {
       if (res.status === 200) {
-        console.log(res);
         dispatch(fetchItineraries(cityID));
-        //dispatch(addToFavSuccess());
       }
     })
     .catch(err => {

@@ -59,8 +59,6 @@ class LogIn extends Component {
   }
 
   logInRender() {
-    console.log("this.state.token", this.state.token);
-
     return (
       <div>
         <h1>Welcome to QueerMeUp {this.state.username}</h1>
@@ -75,7 +73,6 @@ class LogIn extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         {this.props.logIn.isLoggedIn ? (

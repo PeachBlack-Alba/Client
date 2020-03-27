@@ -15,7 +15,6 @@ class Likebutton extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
-    console.log(this.props);
     e.preventDefault();
     this.addToFav();
     this.incrementLikes();
@@ -26,7 +25,6 @@ class Likebutton extends Component {
     const itiID = this.props.itinerary._id;
     const activityname = this.props.activity.name;
     const cityID = this.props.cityID;
-    console.log(user);
     if (user) {
       const userID = user.id;
 
@@ -45,7 +43,6 @@ class Likebutton extends Component {
   isLiked() {
     if (this.props.logIn.isLoggedIn === true) {
       const userID = this.props.logIn.user.id;
-      console.log("this.props.itinerary :", this.props.itinerary);
       if (this.props.activity.favourites.includes(userID)) return true;
     } else return false;
   }

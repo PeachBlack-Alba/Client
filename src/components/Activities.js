@@ -4,7 +4,6 @@ import Likebutton from "../components/Likebutton";
 
 export default class Activities extends Component {
   render() {
-    console.log(this.props);
     const { activities } = this.props;
     console.log("activities", activities);
 

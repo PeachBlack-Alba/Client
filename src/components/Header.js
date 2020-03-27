@@ -12,19 +12,11 @@ class Header extends Component {
       isLoggedIn: false
     };
   }
-  // componentDidMount() {
-  //   if (!this.props.isLoggedIn) {
-  //     console.log("REDIRECT");
-  //     this.props.history.push("/");
-  //   }
-  // }
+
   handleLogOut(e) {
-    console.log("in handle logout");
     e.preventDefault();
     this.props.logOutAction();
     this.props.history.push("/");
-    console.log("this.props.isLoggedIn", this.props.isLoggedIn);
-    //window.location.reload(); // when refresh the page goes to componentdidmount and " this.props.history.push("/");" pushes it to the home page
   }
   render() {
     return (
@@ -35,7 +27,7 @@ class Header extends Component {
         <Link to="/" className="inicio">
           <img className="homeButton" src={home} alt="home"></img>
         </Link>{" "}
-      </div> // LACKING!!! add a return button from itineraries page to cities page
+      </div>
     );
   }
 }
@@ -44,14 +36,11 @@ const mapDispatchToProps = dispatch => {
   return {
     logOutAction: () => {
       dispatch(logOutAction());
-
-      // this.props.history.push("/");
     }
   };
 };
 
 const mapStateToProps = state => {
-  console.log("state in header", state);
   return {
     isLoggedIn: state.logIn.isLoggedIn
   };
