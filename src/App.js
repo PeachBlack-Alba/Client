@@ -26,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Container>
+        <Container className="container">
           <div className="App">
             <Switch>
               <Route exact path="/" component={Landing} />

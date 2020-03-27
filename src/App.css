@@ -54,7 +54,7 @@ body {
   min-height: 450px;
   height: auto;
   border-radius: 5px;
-  padding-top: 30%;
+  padding-top: 40%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -179,6 +179,7 @@ p {
   position: absolute;
   bottom: 5%;
   right: 5%;
+  left: 1%;
   top: 5%;
 }
 
@@ -198,7 +199,7 @@ p {
   position: absolute;
   bottom: 5%;
   right: 5%;
-  left: 5%;
+  left: 2%;
   top: 5%;
 }
 
