@@ -14,7 +14,7 @@ class CitiesPage extends Component {
 
   fetchCities() {
     // fetching data
-    fetch("http://localhost:5000/cities/all") // fetch data of list of cities
+    fetch("https://queermeappbackend.herokuapp.com/cities/all") // fetch data of list of cities
       .then(res => res.json())
       .then(data => {
         this.setState({ cities: data }); // set state con la información de cities

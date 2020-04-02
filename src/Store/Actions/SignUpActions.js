@@ -6,7 +6,7 @@ export default function signUpUser(user) {
   return dispatch => {
     console.log("signUpUser");
     console.log(user);
-    Axios.post("http://localhost:5000/signUp/signUp", {
+    Axios.post("https://queermeappbackend.herokuapp.com/signUp/signUp", {
       // passing information from user to the req.body
       picture: user.picture,
       username: user.username,

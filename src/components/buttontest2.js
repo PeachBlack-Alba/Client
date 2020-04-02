@@ -27,10 +27,13 @@ class LikeButton extends React.Component {
     const username = decoded.username;
 
     if (!this.state.liked) {
-      Axios.post("http://localhost:5000/users/addToFavorite", {
-        activitiesId,
-        username
-      })
+      Axios.post(
+        "https://queermeappbackend.herokuapp.com/users/addToFavorite",
+        {
+          activitiesId,
+          username
+        }
+      )
         .then(res => {
           console.log("fav", res);
         })
@@ -38,10 +41,13 @@ class LikeButton extends React.Component {
           console.log(err.response);
         });
     } else {
-      Axios.post("http://localhost:5000/users/removeFromFavorite", {
-        activitiesId,
-        username
-      })
+      Axios.post(
+        "https://queermeappbackend.herokuapp.com/users/removeFromFavorite",
+        {
+          activitiesId,
+          username
+        }
+      )
         .then(res => {
           console.log("fav", res);
         })

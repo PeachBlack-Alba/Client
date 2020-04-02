@@ -10,7 +10,7 @@ export const fetchItineraries = city_id => dispatch => {
   console.log("in fetch itineraries action");
   dispatch(fetchItinerariesRequested());
 
-  fetch(`http://localhost:5000/itineraries/${city_id}`)
+  fetch(`https://queermeappbackend.herokuapp.com/itineraries/${city_id}`)
     .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -50,7 +50,7 @@ export const addToFavorite = (
 ) => dispatch => {
   console.log(activityname);
   axios
-    .post("http://localhost:5000/activity/addtoFavourite", {
+    .post("https://queermeappbackend.herokuapp.com/activity/addtoFavourite", {
       itiID,
       userID,
       activityname

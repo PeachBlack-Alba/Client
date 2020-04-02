@@ -11,7 +11,7 @@ export function loginAction(email, password) {
   //takes email and password from the state of login
   return dispatch => {
     console.log(password);
-    Axios.post("http://localhost:5000/logIn/logIn", {
+    Axios.post("https://queermeappbackend.herokuapp.com/logIn/logIn", {
       //passes information in the req.body
       email: email,
       password: password

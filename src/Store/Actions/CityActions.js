@@ -7,7 +7,7 @@ export const fetchCities = () => dispatch => {
   console.log("in fetch cities action");
   dispatch(fetchCitiesRequested());
 
-  fetch("http://localhost:5000/cities/all")
+  fetch("https://queermeappbackend.herokuapp.com/cities/all")
     .then(response => response.json())
     .then(data => {
       dispatch(fetchCitiesSuccess(data));
